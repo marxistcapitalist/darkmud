@@ -1,0 +1,150 @@
+package application.model;
+
+import application.MapManager;
+import application.model.interfaces.Containerable;
+import application.model.interfaces.Keyedable;
+import application.view.Logger;
+import application.view.LogEntry.LogType;
+
+public class Doorway {
+	
+	protected Direction direction;
+	private Room leadsTo;
+	private String information;
+	public String key = "";
+	public boolean islocked = false;
+
+	public Doorway (Direction direction, Room leadsTo) {
+		this.direction = direction;
+		this.leadsTo = leadsTo;
+		this.information = direction.toString();
+		System.out.println("NO INFO GIVEN - INFO IS " + direction.toString());
+	}
+
+	public Doorway (Direction direction, Room leadsTo, String information){
+		this(direction, leadsTo);
+		this.information = information + " - " +  direction.toString();
+	}
+	
+	public Doorway (Direction direction, Room leadsTo, String information, String lock){
+		this(direction, leadsTo);
+		this.information = information +  " - " +  direction.toString();;
+		this.islocked = true;
+		this.key = lock;
+	}
+
+	public static enum Direction {
+		NORTH("NORTH"), SOUTH("SOUTH"), EAST("EAST"), WEST("WEST"), NORTHEAST(
+				"NORTHEAST"), NORTHWEST("NORTHWEST"), SOUTHEAST("SOUTHEAST"), SOUTHWEST(
+				"SOUTHWEST"), UP("UP"), DOWN("DOWN");
+
+		private final String output;
+
+		Direction(String output) {
+			this.output = output;
+		}
+
+		@Override
+		public String toString() {
+			return output;
+		}
+	}
+	
+	public String getInformation () {
+		return this.information;
+	}
+	
+	public Direction getDirection() {
+		return this.direction;
+	}
+	
+	public Room getLeadsTo() {
+		return this.leadsTo;
+	}
+	
+	public void unlock () {
+		this.islocked = false;
+	}
+
+	public void unlock (Item item) {
+		if (item instanceof Keyedable && this.islocked == true) {
+			if (item.key.contains(this.key)) {
+				this.islocked = false;
+				Logger.log(LogType.RESPONSE, "You unlocked the " + this.information.substring(0, this.information.indexOf(" - ")) + " with the " + item.description + " " + item.identifier + ".");
+				return;
+			}
+			for (Room room : MapManager.getAllRoomsUnnamed()) {
+				for (Doorway doorway : room.getDoorways()) {
+					if (item.key.equals(doorway.key)) {
+						doorway.islocked = false;
+					}
+				}
+			}
+			Logger.log(LogType.RESPONSE, "You cannot unlock the " + this.information.substring(0, this.information.indexOf(" - ")) + " with this item.");
+			return;
+		}
+	}
+	
+	public void unlockItemConsumed (Item item) {
+		if (item instanceof Keyedable && this.islocked == true) {
+			if (item.key.equals(this.key)) {
+				this.islocked = false;
+				MapManager.getCurrentRoom().getRoomItems().remove(item);
+				Logger.log(LogType.ITEM, "The " + item.description + " " + item.identifier + " was consumed.");
+				Logger.log(LogType.RESPONSE, "You unlocked the " + this.information.substring(0, this.information.indexOf(" - ")) + " with the " + item.description + " " + item.identifier + ".");
+				return;
+			}
+			Logger.log(LogType.RESPONSE, "You cannot unlock the " + this.information.substring(0, this.information.indexOf(" - ")) + " with this item.");
+			return;
+		}
+	}	
+	
+	public void executeInspect() {
+		if (this.islocked) {
+			for (Item item : MapManager.getInventoryItems()) {
+				if (item instanceof Containerable || true) {
+					for (Item child : item.getChildren()) {
+						if (child.key.equals(this.key)) {
+							Logger.log(LogType.RESPONSE, "This " + this.information.substring(0, this.information.indexOf(" - ")) + " is locked, but you have the " + child.description + " " + child.identifier + " in your " + item.description + " " + item.identifier + "!");
+							return;
+						}
+					}
+				}
+				if (item.key.equals(this.key)) {
+					Logger.log(LogType.RESPONSE, "This " + this.information.substring(0, this.information.indexOf(" - ")) + " is locked, but you have the " + item.description + " " + item.identifier + " in your inventory!");
+					return;
+				}
+				
+			}
+			for (Room room : MapManager.getAllRoomsUnnamed()) {
+				for (Item item : room.getRoomItems()) {
+					if (item instanceof Containerable) {
+						for (Item child : item.getChildren()) {
+							if (child instanceof Containerable) {
+								for (Item sub : child.getChildren()) {
+									if (sub.key.equals(this.key)) {
+										Logger.log(LogType.RESPONSE, "This " + this.information.substring(0, this.information.indexOf(" - ")) + " is locked; requires " + sub.description + " " + sub.identifier + " to open.");
+										return;
+									}
+								}
+							} else {
+								if (child.key.equals(this.key)) {
+									Logger.log(LogType.RESPONSE, "This " + this.information.substring(0, this.information.indexOf(" - ")) + " is locked; requires " + child.description + " " + child.identifier + " to open.");
+									return;
+								}
+							}
+						}
+					} else {
+						if (item.key.equals(this.key)) {
+							Logger.log(LogType.RESPONSE, "This " + this.information.substring(0, this.information.indexOf(" - ")) + " is locked; requires " + item.description + " " + item.identifier + " to open.");
+							return;
+						}
+					}
+				}
+			}
+			Logger.log(LogType.RESPONSE, "This " + this.information.substring(0, this.information.indexOf(" - ")) + " is permenantly sealed shut!");
+			return;
+		}
+		Logger.log(LogType.RESPONSE, "This " + this.information.substring(0, this.information.indexOf(" - ")) + " is unlocked!");
+	}
+}

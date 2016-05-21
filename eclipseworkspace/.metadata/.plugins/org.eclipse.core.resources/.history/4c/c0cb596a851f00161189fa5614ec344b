@@ -1,0 +1,117 @@
+package application;
+
+import java.util.concurrent.ExecutionException;
+
+import application.model.input.SmartParser;
+import javafx.application.Platform;
+import pro.beam.api.BeamAPI;
+import pro.beam.api.resource.BeamUser;
+import pro.beam.api.resource.channel.BeamChannel;
+import pro.beam.api.resource.chat.BeamChat;
+import pro.beam.api.resource.chat.BeamChatConnectable;
+import pro.beam.api.resource.chat.events.EventHandler;
+import pro.beam.api.resource.chat.events.IncomingMessageEvent;
+import pro.beam.api.resource.chat.events.IncomingWidgetEvent;
+import pro.beam.api.resource.chat.methods.AuthenticateMessage;
+import pro.beam.api.resource.chat.methods.ChatSendMethod;
+import pro.beam.api.resource.chat.replies.AuthenticationReply;
+import pro.beam.api.resource.chat.replies.ReplyHandler;
+import pro.beam.api.services.impl.ChatService;
+import pro.beam.api.services.impl.UsersService;
+import pro.beam.api.resource.BeamUser.Role;
+
+public class BeamConnection {
+
+	private static BeamChatConnectable reference;
+	private BeamChannel beamChannelName;
+	private int beamChannelIdent;
+	private BeamAPI beam = new BeamAPI();
+	private BeamUser clientUser;
+	private String auth;
+	public static boolean login = false;
+
+	public boolean valid = false;
+
+	public static BeamChatConnectable getBeamChat() {
+		return reference;
+	}
+
+	public void login(String user, String pass) throws InterruptedException,
+			ExecutionException {
+		BeamUser clientUser = beam.use(UsersService.class).login(user, pass)
+				.get();
+		this.clientUser = clientUser;
+	}
+
+	public void login(String user, String pass, String auth)
+			throws InterruptedException, ExecutionException {
+		BeamUser clientUser = beam.use(UsersService.class)
+				.login(user, pass, auth).get();
+		this.clientUser = clientUser;
+		this.auth = auth;
+	}
+
+	public void connect() throws InterruptedException, ExecutionException {
+
+		BeamChat chat = beam.use(ChatService.class)
+				.findOne(clientUser.channel.id).get();
+		final BeamChatConnectable connectable = chat.makeConnectable(beam);
+		reference = connectable;
+
+		boolean connected = connectable.connectBlocking();
+
+		if (connected) {
+			login = true;
+
+			connectable.send(AuthenticateMessage.from(clientUser.channel,
+					clientUser, chat.authkey),
+					new ReplyHandler<AuthenticationReply>() {
+						@Override
+						public void onSuccess(AuthenticationReply reply) {
+							System.out.println("Authenticated!");
+							// login confirmation check here
+							connectable.send(ChatSendMethod
+									.of("is beginning a game of 'THE MAZE'"));
+						}
+					});
+		}
+		registerResponse();
+	}
+
+	private void registerResponse() {
+		reference.on(IncomingMessageEvent.class,
+				new EventHandler<IncomingMessageEvent>() {
+
+					@Override
+					public void onEvent(IncomingMessageEvent event) {
+						Platform.runLater(new Runnable() {
+							@Override
+							public void run() {
+								if(event.data.getMessage().substring(0, 2).equals("!!")) {
+									if (event.data.user_roles.contains(Role.OWNER)) {
+										SmartParser.parse(event.data.getMessage().substring(2, event.data.getMessage().length()));
+									} else if (event.data.user_roles.contains(Role.MOD)) {
+										if (!event.data.getMessage().toUpperCase().contains("QUIT") && !event.data.getMessage().toUpperCase().contains("HELP")) {
+											SmartParser.parse(event.data.getMessage().substring(2, event.data.getMessage().length()));
+										}
+									} else if (!event.data.getMessage().toUpperCase().contains("RESTART") && !event.data.getMessage().toUpperCase().contains("QUIT") && !event.data.getMessage().toUpperCase().contains("HELP")) {
+										SmartParser.parse(event.data.getMessage().substring(2, event.data.getMessage().length()));
+									} else {
+										sendMessage("Help: http://i.imgur.com/WMHZGv7.png");
+									}
+								}
+							}
+						});
+
+					}
+				});
+
+		
+	}
+
+	public boolean sendMessage(String message) {
+		reference.send(ChatSendMethod.of(message));
+		return true;
+	}
+
+}

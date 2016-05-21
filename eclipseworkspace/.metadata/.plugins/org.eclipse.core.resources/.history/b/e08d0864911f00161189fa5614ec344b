@@ -1,0 +1,62 @@
+package application.model.items;
+
+import application.MapManager;
+import application.model.Item;
+import application.model.interfaces.Killable;
+import application.model.interfaces.Statusable;
+import application.view.Logger;
+import application.view.LogEntry.LogType;
+
+public class RapWitch extends Item implements Killable {
+	
+	public int health =  0;
+	private Item droppableItem;
+	
+	public RapWitch() { super(); }
+	
+	public RapWitch(String name) {
+		identifier = name;
+	}
+	
+	public RapWitch(String name, String description, String information, int health) {
+		this(name);
+		super.description = description;
+		super.information = information;	
+		this.health = health;
+	}
+	
+
+	@Override
+	public void executeUsedUpon(Item item) {
+		super.executeUsedUpon(item);
+		this.health -= 2;
+		if (item instanceof Statusable) 
+			this.health -= 10;
+		if (this.health <= 0) {
+			MapManager.getCurrentRoom().getRoomItems().remove(this);
+			MapManager.getCurrentRoom().getRoomItems().add(new Treasure("Hair", "Blond", "is very beautiful, and seems to glow slightly"));
+			Logger.log(LogType.KILL, "You killed the Witch!");
+			Logger.log(LogType.ITEM, "In exchange for freeing her, the woman leaves behind a lock of her hair as a gift.");	
+			this.openRoom();
+		}
+	}
+
+	@Override
+	public void executeUsedUponConsumed(Item item) {
+		super.executeUsedUponConsumed(item);
+		this.health -= 1;
+		if (this.health <= 0) {
+			MapManager.getCurrentRoom().getRoomItems().remove(this);
+			MapManager.getCurrentRoom().getRoomItems().add(new Treasure("Hair", "Blond", "is very beautiful, and seems to glow slightly"));
+			Logger.log(LogType.KILL, "You killed the Witch!");
+			Logger.log(LogType.ITEM, "In exchange for freeing her, the woman leaves behind a lock of her hair as a gift.");	
+			this.openRoom();
+		}
+	}
+	
+	@Override
+	public void executeInspect() {
+		Logger.log(LogType.RESPONSE, "The " + this.description + " " + this.identifier + " " + this.information + "!");	
+	}
+
+}

@@ -1,0 +1,28 @@
+package application.model.rooms;
+
+import java.util.HashMap;
+
+import application.model.Doorway;
+import application.model.Doorway.Direction;
+import application.model.Room;
+import application.model.items.Paper;
+import application.model.items.Scenery;
+ 
+public class Clearing extends Room {
+	
+	public static String identifier = "Clearing";
+
+	public Clearing (HashMap<String, Room> rooms) { 
+		super(rooms, "You stand atop a grassy hill. A large country houes lies to the south.", "You see a grassy hilltop.");
+		super.id = identifier;
+	}
+	
+	@Override public void initialize () {
+		//addDoorway(new Doorway(Direction.NORTH, this.rooms.get(WornRoadA.identifier)));
+		addDoorway(new Doorway(Direction.SOUTH, this.rooms.get(FrontYard.identifier), "the yard"));
+		//addDoorway(new Doorway(Direction.EAST, this.rooms.get(ForestPath.indentifier)));
+		
+		addItem(new Paper ("Leaflet", "Folded", "says:\nWelcome to Fables!\nFables is a game of exploration, danger, and quick thinking.\nWithin you will explore a world like nothing ever before.\nYour goal is to escape the fairytale, and make it back to your world alive!\nThis game is based on The Maze (Zork Framework) by @Graphica on GitHub.\nThe Maze was inspired by Zork, which was created at the MIT Laboratory\nfor Computer Science by Tim Anderson, Marc Blank, Bruce Daniels, and Dave Lebling.\n\nHINT: INSPECT directions to see what's there. You don't want to become Grue fodder, do you?")); 
+		addItem(new Scenery("Tree", "Larch", "is very recognizable, even from quite a long way away."));
+	}
+}

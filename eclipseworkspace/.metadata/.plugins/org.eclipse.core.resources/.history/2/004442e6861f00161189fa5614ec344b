@@ -1,0 +1,26 @@
+package application.model.rooms;
+
+import java.util.HashMap;
+
+import application.model.Room;
+import application.model.Doorway;
+import application.model.Doorway.Direction;
+ 
+public class HouseKitchen extends Room {
+	
+	public static String identifier = "HouseKitchen";
+
+	public HouseKitchen (HashMap<String, Room> rooms) { 
+		super(rooms, "You are in a room. There currently seems to be nothing here.", "You see an oddly empty room.");
+		super.id = identifier;
+	}
+	
+	@Override public void initialize () {
+		// Add Doorways 
+		addDoorway(new Doorway(Direction.WEST, this.rooms.get(House.identifier)));
+		addDoorway(new Doorway(Direction.SOUTH, this.rooms.get(GrueStorage.identifier)));
+		
+		// Add Items, Enemies, Weapons, Bags, etc.
+		
+	}
+}

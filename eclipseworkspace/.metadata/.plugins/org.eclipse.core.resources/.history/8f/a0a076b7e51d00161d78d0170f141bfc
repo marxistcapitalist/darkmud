@@ -1,0 +1,27 @@
+package application.model.rooms;
+
+import java.util.HashMap;
+
+import application.model.Room;
+import application.model.items.Scenery;
+ 
+public class Base extends Room {
+	
+	public static String identifier = "BackYard";
+
+	public Base (HashMap<String, Room> rooms) { 
+		super(rooms, "You are in a room. There currently seems to be nothing here.", "An oddly empty room.");
+		super.id = identifier;
+	}
+	
+	@Override public void initialize () {
+		// Add Doorways 
+		//addDoorway(new Doorway(Direction.NORTH, this.rooms.get(House.identifier)));
+		//addDoorway(new Doorway(Direction.WEST, this.rooms.get(ForestWest.identifier)));
+		//addDoorway(new Doorway(Direction.SOUTH, this.rooms.get(Cellar.identifier)));
+		//addDoorway(new Doorway(Direction.EAST, this.rooms.get(Shed.identifier)));
+		
+		// Add Items, Enemies, Weapons, Bags, etc.
+		addItem(new Scenery("Pot","Worn","is very old, although it could still sustain flowers."));
+	}
+}

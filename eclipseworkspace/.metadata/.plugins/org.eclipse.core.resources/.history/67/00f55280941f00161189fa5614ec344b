@@ -1,0 +1,27 @@
+package application.model.rooms;
+
+import java.util.HashMap;
+
+import application.model.Room;
+import application.model.Doorway;
+import application.model.Doorway.Direction;
+ 
+public class WornRoadA extends Room {
+	
+	public static String identifier = "WornRoadA";
+
+	public WornRoadA (HashMap<String, Room> rooms) { 
+		super(rooms, "You are standing on an old cobblestone road, worn down by years of erosion and travel", "You see an old cobblestone road");
+		super.id = identifier;
+	}
+	
+	@Override public void initialize () {
+		// Add Doorways 
+		addDoorway(new Doorway(Direction.NORTH, this.rooms.get(ClearingE.identifier)));
+		addDoorway(new Doorway(Direction.WEST, this.rooms.get(WorkRoadB.identifier)));
+		addDoorway(new Doorway(Direction.SOUTH, this.rooms.get(Clearing.identifier)));
+		addDoorway(new Doorway(Direction.EAST, this.rooms.get(ForestA.identifier)));
+		
+		// Add Items, Enemies, Weapons, Bags, etc.
+	}
+}

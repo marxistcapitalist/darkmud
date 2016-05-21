@@ -1,0 +1,26 @@
+package application.model.rooms;
+
+import java.util.HashMap;
+
+import application.model.Room;
+import application.model.Doorway;
+import application.model.Doorway.Direction;
+ 
+public class BrushTower extends Room {
+	
+	public static String identifier = "BrushTower";
+
+	public BrushTower (HashMap<String, Room> rooms) { 
+		super(rooms, "You are standing in the top room of the tall tower, now vacant of witches or princesses", "You see a tall, stone-brick tower. It seems to be climbable");
+		super.id = identifier;
+	}
+	// TODO Allow CLIMB as keyword for getting into this room
+	@Override public void initialize () {
+		// Add Doorways 
+		addDoorway(new Doorway(Direction.WEST, this.rooms.get(ClearingW.identifier)));
+		addDoorway(new Doorway(Direction.EAST, this.rooms.get(ClearingE.identifier)));
+		addDoorway(new Doorway(Direction.NORTH, this.rooms.get(BriarPatch.identifier)));
+		
+		// Add Items, Enemies, Weapons, Bags, etc.
+	}
+}

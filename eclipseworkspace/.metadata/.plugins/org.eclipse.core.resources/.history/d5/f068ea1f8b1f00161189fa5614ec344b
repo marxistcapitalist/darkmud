@@ -1,0 +1,25 @@
+package application.model.rooms;
+
+import java.util.HashMap;
+
+import application.model.Room;
+import application.model.Doorway;
+import application.model.Doorway.Direction;
+ 
+public class BrushTower extends Room {
+	
+	public static String identifier = "BrushTower";
+
+	public BrushTower (HashMap<String, Room> rooms) { 
+		super(rooms, "You are standing in a wide, windy expanse.\nTo your east, you see a tower with some vines that may be climbable", "You see a tall, stone-brick tower. It seems to be climbable");
+		super.id = identifier;
+	}
+	
+	@Override public void initialize () {
+		// Add Doorways 
+		addDoorway(new Doorway(Direction.SOUTH, this.rooms.get(Grassland.identifier)));
+		addDoorway(new Doorway(Direction.EAST, this.rooms.get(BrushTower.identifier)));
+		
+		// Add Items, Enemies, Weapons, Bags, etc.
+	}
+}

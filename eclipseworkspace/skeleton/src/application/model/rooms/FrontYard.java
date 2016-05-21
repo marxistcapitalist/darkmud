@@ -1,0 +1,33 @@
+package application.model.rooms;
+
+import java.util.HashMap;
+
+import application.model.Doorway;
+import application.model.Doorway.Direction;
+import application.model.Room;
+import application.model.items.Chest;
+import application.model.items.Paper;
+import application.model.items.Scenery;
+ 
+public class FrontYard extends Room {
+	
+	public static String identifier = "FrontYard";
+
+	public FrontYard (HashMap<String, Room> rooms) { 
+		super(rooms, "You are standing in the front yard of a large, dilapidated country home.\nThe front door seems to be wide open.", "You see the front yard of the country house");
+		super.id = identifier;
+	}
+	
+	@Override public void initialize () {
+		addDoorway(new Doorway(Direction.NORTH, this.rooms.get(Clearing.identifier)));
+		//addDoorway(new Doorway(Direction.EAST, this.rooms.get(Shed.identifier)));
+		addDoorway(new Doorway(Direction.SOUTH, this.rooms.get(House.identifier)));
+		
+		addItem(new Chest("Mailbox", "White", 
+				new Paper ("Letter", "Old", "says simply: eiL A sI ekaC ehT")
+				)); 
+		
+		addItem(new Scenery("Home", "Country", "is sizeable, yet derelict. You presume it must have been abandoned some time ago." ));
+		addItem(new Scenery("Door","Front","isn't locked. Odd."));
+	}
+}

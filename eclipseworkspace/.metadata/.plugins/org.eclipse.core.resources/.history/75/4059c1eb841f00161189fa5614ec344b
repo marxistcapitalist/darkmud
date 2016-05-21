@@ -1,0 +1,30 @@
+package application.model.rooms;
+
+import java.util.HashMap;
+
+import application.model.Doorway;
+import application.model.Doorway.Direction;
+import application.model.Room;
+import application.model.items.Scenery;
+ 
+public class House extends Room {
+	
+	public static String identifier = "House";
+
+	public House (HashMap<String, Room> rooms) { 
+		super(rooms, "You are standing in a stately enterance hall, though the paint is peeling.", "You see the enterance hall of the house.");
+		super.id = identifier;
+	}
+	
+	@Override public void initialize () {
+		// Add Doorways 
+		addDoorway(new Doorway(Direction.NORTH, this.rooms.get(FrontYard.identifier)));
+		addDoorway(new Doorway(Direction.WEST, this.rooms.get(Library.identifier)));
+		addDoorway(new Doorway(Direction.SOUTH, this.rooms.get(OldStaircase.identifier)));
+		addDoorway(new Doorway(Direction.EAST, this.rooms.get(HouseKitchen.identifier)));
+		
+		// Add Items, Enemies, Weapons, Bags, etc.
+		addItem(new Scenery("Pot","Worn","is very old, although it could likely still sustain flowers."));
+		addItem(new Scenery("Chandelier","Large","is brilliant, yet tarnished."));
+	}
+}

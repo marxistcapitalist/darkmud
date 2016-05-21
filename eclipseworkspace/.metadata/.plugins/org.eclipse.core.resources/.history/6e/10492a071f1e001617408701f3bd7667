@@ -1,0 +1,29 @@
+package application.model.rooms;
+
+import java.util.HashMap;
+
+import application.model.Room;
+import application.model.items.Grue;
+import application.model.Doorway;
+import application.model.Doorway.Direction;
+ 
+public class GrueStorage extends Room {
+	
+	public static String identifier = "GrueStorage";
+
+	public GrueStorage (HashMap<String, Room> rooms) { 
+		super(rooms, "The door slams shut behind you, and locks.\nIt is pitch black. You are likely to be eaten by a grue", "You see a pitch-black storage room");
+		super.id = identifier;
+	}
+	
+	@Override public void initialize () {
+		// Add Doorways 
+		addDoorway(new Doorway(Direction.NORTH, this.rooms.get(House.identifier), "NORTH", "impossiblekey"));
+		//addDoorway(new Doorway(Direction.WEST, this.rooms.get(ForestWest.identifier)));
+		//addDoorway(new Doorway(Direction.SOUTH, this.rooms.get(Cellar.identifier)));
+		//addDoorway(new Doorway(Direction.EAST, this.rooms.get(Shed.identifier)));
+		
+		// Add Items, Enemies, Weapons, Bags, etc.
+		addItem(new InvincibleGrue());
+	}
+}

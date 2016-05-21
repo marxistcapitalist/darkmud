@@ -1,0 +1,29 @@
+package application.model.rooms;
+
+import java.util.HashMap;
+
+import application.model.Room;
+import application.model.items.Scenery;
+import application.model.Doorway;
+import application.model.Doorway.Direction;
+ 
+public class OldStaircase extends Room {
+	
+	public static String identifier = "BackYard";
+
+	public OldStaircase (HashMap<String, Room> rooms) { 
+		super(rooms, "You are in a room. There currently seems to be nothing here.", "You see an oddly empty room.");
+		super.id = identifier;
+	}
+	
+	@Override public void initialize () {
+		// Add Doorways 
+		//addDoorway(new Doorway(Direction.NORTH, this.rooms.get(House.identifier)));
+		//addDoorway(new Doorway(Direction.WEST, this.rooms.get(ForestWest.identifier)));
+		//addDoorway(new Doorway(Direction.SOUTH, this.rooms.get(Cellar.identifier)));
+		//addDoorway(new Doorway(Direction.EAST, this.rooms.get(Shed.identifier)));
+		
+		// Add Items, Enemies, Weapons, Bags, etc.
+		addItem(new Scenery("Pot","Worn","is very old, although it could still sustain flowers."));
+	}
+}

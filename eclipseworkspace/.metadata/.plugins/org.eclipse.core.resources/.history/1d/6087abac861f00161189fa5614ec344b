@@ -1,0 +1,26 @@
+package application.model.rooms;
+
+import java.util.HashMap;
+
+import application.model.Room;
+import application.model.items.Scenery;
+import application.model.Doorway;
+import application.model.Doorway.Direction;
+ 
+public class Library extends Room {
+	
+	public static String identifier = "Library";
+
+	public Library (HashMap<String, Room> rooms) { 
+		super(rooms, "You observe a mysteriously well-maintained library for a house in such disrepair.\n All around are bookcases full of books, but what catches your eye is a\nbook that seems chained to a padestal in the middle of the room", "You a well-kept library, full of books");
+		super.id = identifier;
+	}
+	
+	@Override public void initialize () {
+		// Add Doorways 
+		addDoorway(new Doorway(Direction.EAST, this.rooms.get(House.identifier)));
+		
+		// Add Items, Enemies, Weapons, Bags, etc.
+		
+	}
+}

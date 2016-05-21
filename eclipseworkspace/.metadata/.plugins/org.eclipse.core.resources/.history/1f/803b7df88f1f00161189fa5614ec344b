@@ -1,0 +1,28 @@
+package application.model.rooms;
+
+import java.util.HashMap;
+
+import application.model.Room;
+import application.model.items.Witch;
+import application.model.Doorway;
+import application.model.Doorway.Direction;
+ 
+public class BrushTower extends Room {
+	
+	public static String identifier = "BrushTower";
+
+	public BrushTower (HashMap<String, Room> rooms) { 
+		super(rooms, "As you enter, all the openings SLAM SHUT!\nYou are standing in the top room of the tall tower.\nA witch and a beautiful young woman are here as well", "You see a tall, stone-brick tower. It seems to be climbable");
+		super.id = identifier;
+	}
+	// TODO Allow CLIMB as keyword for getting into this room
+	@Override public void initialize () {
+		// SPECIAL CASE - The doorways are inoperable until you have defeated the witch
+		Doorway doorW = new Doorway(Direction.WEST, this.rooms.get(ClearingW.identifier), "", "impossiblekey");
+		//Doorway doorN = new Doorway(Direction.NORTH, this.rooms.get(ClearingN.identifier), "", "impossiblekey");
+		//Doorway doorE = new Doorway(Direction.EAST, this.rooms.get(ClearingE.identifier), "", "impossiblekey");
+		
+		// Add Items, Enemies, Weapons, Bags, etc.
+		addItem(new Witch("Old", "Witch", "is very nasty-looking, and wields a scraggly wand", 10));
+	}
+}
