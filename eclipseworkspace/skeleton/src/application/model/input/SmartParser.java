@@ -5,6 +5,7 @@ import java.util.Arrays;
 
 import application.Main;
 import application.MapManager;
+import application.MapManager.Health;
 import application.model.Doorway;
 import application.model.Item;
 import application.model.interfaces.Consumable;
@@ -65,6 +66,12 @@ public abstract class SmartParser {
 	}
 	
 	private static void matcher (ArrayList<String> input) {
+		if(MapManager.getHealthRaw() == Health.DEAD) {
+			if(!(input.get(0).equals(RESTART) || input.get(0).equals(QUIT))) {
+				Logger.log(LogType.RESPONSE, "You can't do that, you're dead!\n(You can RESTART or QUIT)");
+				return;
+			}
+		}
 		switch(input.get(0)) {
 		case GO:
 			switch (input.size()) {

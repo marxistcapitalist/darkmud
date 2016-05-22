@@ -27,6 +27,7 @@ import application.model.rooms.House;
 import application.model.rooms.HouseKitchen;
 import application.model.rooms.Library;
 import application.model.rooms.OldStaircase;
+import application.model.rooms.ToadstoolRing;
 import application.model.rooms.WornRoadA;
 import application.model.rooms.WornRoadB;
 import application.view.LogEntry.LogType;
@@ -87,6 +88,7 @@ public class MapManager {
 		rooms.put(BrushTower.identifier, new BrushTower(rooms));
 		rooms.put(ClearingN.identifier, new ClearingN(rooms));
 		rooms.put(ClearingE.identifier, new ClearingE(rooms));
+		rooms.put(ToadstoolRing.identifier, new ToadstoolRing(rooms));
 		
 		//Executes the initialize method in every mapped room
 		//Which must be done after the map itself is built
@@ -115,19 +117,27 @@ public class MapManager {
 		return health.toString();
 	}
 	
+	public static Health getHealthRaw() {
+		return health;
+	}
+	
 	public static void setHealth(Health h) {
 		switch(h) {
 		case HEALTHY:
-			Logger.log(LogType.RESPONSE, "Status changed to HEALTHY");
+			Logger.log(LogType.RESPONSE, "Your status was changed to HEALTHY");
+			health = Health.HEALTHY;
 			break;
 		case HURT:
-			Logger.log(LogType.RESPONSE, "Status changed to HURT");
+			Logger.log(LogType.RESPONSE, "Your status was to HURT");
+			health = Health.HURT;
 			break;
 		case WOUNDED:
-			Logger.log(LogType.RESPONSE, "Status changed to WOUNDED");
+			Logger.log(LogType.RESPONSE, "Your status was changed to WOUNDED");
+			health = Health.WOUNDED;
 			break;
 		case DEAD:
-			Logger.log(LogType.RESPONSE, "Status changed to DEAD");
+			Logger.log(LogType.RESPONSE, "Your status was changed to DEAD\nYou died!");
+			health = Health.DEAD;
 			break;
 		}
 	}
@@ -138,11 +148,11 @@ public class MapManager {
 			Logger.log(LogType.RESPONSE, "You were already at full health");
 			break;
 		case HURT:
-			Logger.log(LogType.RESPONSE, "Status increased to HEALTHY");
+			Logger.log(LogType.RESPONSE, "Your status was increased to HEALTHY");
 			health = Health.HEALTHY;
 			break;
 		case WOUNDED:
-			Logger.log(LogType.RESPONSE, "Status increased to HURT");
+			Logger.log(LogType.RESPONSE, "Your status was increased to HURT");
 			health = Health.HURT;
 			break;
 		case DEAD:
@@ -157,7 +167,7 @@ public class MapManager {
 			Logger.log(LogType.RESPONSE, "Your dead body loses even more life... somehow.");
 			break;
 		case WOUNDED:
-			Logger.log(LogType.RESPONSE, "Your status was reduced to DEAD.");
+			Logger.log(LogType.RESPONSE, "Your status was reduced to DEAD.\nYou died!");
 			health = Health.DEAD;
 			break;
 		case HURT:
@@ -224,7 +234,9 @@ public class MapManager {
 	public static void movePlayer(Room leadsTo) {
 		room = leadsTo.id;
 		Logger.log(LogType.ROOM, leadsTo.getDescription());
-		Logger.log(LogType.RESPONSE, "You can go: " + rooms.get(room).getDoorwayInformation());
+		if(leadsTo.getDoorways().size() > 0)
+			Logger.log(LogType.RESPONSE, "You can go: " + rooms.get(room).getDoorwayInformation());
+		leadsTo.enter();
 	}
 	
 	public static void moveOnWin() {

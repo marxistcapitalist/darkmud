@@ -172,4 +172,6 @@ public class Room {
 	}
 	
 	public void initialize() { }
+	
+	public void enter() { }
 }

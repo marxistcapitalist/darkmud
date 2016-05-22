@@ -19,7 +19,7 @@ public class ClearingE extends Room {
 		// Add Doorways 
 		addDoorway(new Doorway(Direction.SOUTH, this.rooms.get(WornRoadA.identifier)));
 		addDoorway(new Doorway(Direction.WEST, this.rooms.get(BrushTower.identifier)));
-		//addDoorway(new Doorway(Direction.EAST, this.rooms.get(ToadstoolRing.identifier)));
+		addDoorway(new Doorway(Direction.EAST, this.rooms.get(ToadstoolRing.identifier)));
 		//addDoorway(new Doorway(Direction.NORTH, this.rooms.get(BriarPatch.identifier)));
 		
 		// Add Items, Enemies, Weapons, Bags, etc.
