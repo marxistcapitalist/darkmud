@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import application.model.Room;
 import application.model.items.Scenery;
+import application.model.items.Knife;
 import application.model.items.RapWitch;
 import application.model.items.Rock;
 import application.model.Doorway;
@@ -30,14 +31,15 @@ public class BrushTower extends Room {
 		this.doorE = new Doorway(Direction.EAST, this.rooms.get(ClearingE.identifier), "EAST", "impossiblekey");
 		
 		// Add Items, Enemies, Weapons, Bags, etc.
-		addItem(new RapWitch("Old", "Witch", "is very nasty-looking, and wields a scraggly wand", 10));
-		addItem(new Scenery("Young", "Woman", "is stunningly beautiful, and has extremely long, blond hair"));
+		addItem(new RapWitch("Witch", "Old", "is very nasty-looking, and wields a scraggly wand", 10));
+		addItem(new Scenery("Woman", "Young", "is stunningly beautiful, and has extremely long, blond hair"));
 		addItem(new Rock("Rock", "Odd", "is very odd"));
 		addItem(new Rock("Rock", "Sharp", "is very sharp"));
 		addItem(new Rock("Rock", "Hard", "is vary hard"));
 		addItem(new Rock("Rock", "Square", "is very square (how odd)"));
 		addItem(new Rock("Rock", "Dickish", "looks phallic"));
 		addItem(new Rock("Rock", "Kid", "insists his name is Robert Ritchie"));
+		addItem(new Knife("Knife", "Rusty", "could give you a nasty case of Tetanus", ""));
 		
 	}
 	

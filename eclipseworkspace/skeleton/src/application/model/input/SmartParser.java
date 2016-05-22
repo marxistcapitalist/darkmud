@@ -217,7 +217,7 @@ public abstract class SmartParser {
 					}
 					Logger.log(LogType.DEFAULT, "There doesn't seem to be a " + input.get(3) + " " + input.get(4) + " here...");
 					return;
-				}else if (input.get(3).equals(FROM)) {
+				} else if (input.get(3).equals(FROM)) {
 					for (Item container : MapManager.getCurrentRoom().getTypedItems("Containerable")) {
 						if (container.identifier.equalsIgnoreCase(input.get(4))) {
 							for (Item item : container.getChildren()) {

@@ -25,8 +25,8 @@ public class CandyKitchen extends Room {
 		this.doorE = new Doorway(Direction.EAST, this.rooms.get(CandyOven.identifier), "EAST", "impossiblekey");
 		
 		// Add Items, Enemies, Weapons, Bags, etc.
-		addItem(new CandyWitch("Old", "Witch", "is very vulgar-looking, and wields a sharp candy knife", 10));
-		addItem(new Scenery("Oven", "", "is stunningly beautiful, and has extremely long, blond hair"));
+		addItem(new CandyWitch("Witch", "Old", "is very vulgar-looking, and wields a sharp candy knife", 10));
+		addItem(new Scenery("Oven", "Iron", "is very large, and lets out a warm draft"));
 	}
 	
 	public void openRoom() {

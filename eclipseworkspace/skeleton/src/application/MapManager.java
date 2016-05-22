@@ -66,7 +66,8 @@ public class MapManager {
 	private static HashMap<String, Room> rooms = new HashMap<String, Room>();
 	
 	public enum Health {
-		HEALTHY ("Healthy"), HURT ("Hurt"), WOUNDED ("Wounded"), DEAD ("Dead");
+		HEALTHY ("Healthy"), SCATHED ("Scathed"), HURT ("Hurt"), INJURED ("Injured"), 
+		SEVEREINJURED ("Severely Injured"), WOUNDED ("Wounded"), NEARDEAD ("Nearly Dead"), DEAD ("Dead");
 		
 		private String status;
 		
@@ -153,13 +154,29 @@ public class MapManager {
 			Logger.log(LogType.RESPONSE, "Your status was changed to HEALTHY");
 			health = Health.HEALTHY;
 			break;
+		case SCATHED:
+			Logger.log(LogType.RESPONSE, "Your status was changed to SCATHED");
+			health = Health.SCATHED;
+			break;
 		case HURT:
-			Logger.log(LogType.RESPONSE, "Your status was to HURT");
+			Logger.log(LogType.RESPONSE, "Your status was changed to HURT");
 			health = Health.HURT;
+			break;
+		case INJURED:
+			Logger.log(LogType.RESPONSE, "Your status was changed to INJURED");
+			health = Health.INJURED;
+			break;
+		case SEVEREINJURED:
+			Logger.log(LogType.RESPONSE, "Your status was to SEVERELY INJURED");
+			health = Health.SEVEREINJURED;
 			break;
 		case WOUNDED:
 			Logger.log(LogType.RESPONSE, "Your status was changed to WOUNDED");
 			health = Health.WOUNDED;
+			break;
+		case NEARDEAD:
+			Logger.log(LogType.RESPONSE, "Your status was changed to NEARLY DEAD");
+			health = Health.NEARDEAD;
 			break;
 		case DEAD:
 			Logger.log(LogType.RESPONSE, "Your status was changed to DEAD\nYou died!");
@@ -169,41 +186,96 @@ public class MapManager {
 	}
 	
 	public static void incrementHealth() {
+		incrementHealth(true);
+	}
+
+	public static void incrementHealth(boolean showMessage) {
 		switch (health) {
 		case HEALTHY:
-			Logger.log(LogType.RESPONSE, "You were already at full health");
+			if(showMessage) Logger.log(LogType.RESPONSE, "You were already at full health");
 			break;
-		case HURT:
-			Logger.log(LogType.RESPONSE, "Your status was increased to HEALTHY");
+		case SCATHED:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was increased to HEALTHY");
 			health = Health.HEALTHY;
+			break; 
+		case HURT:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was increased to SCATHED");
+			health = Health.SCATHED;
 			break;
-		case WOUNDED:
-			Logger.log(LogType.RESPONSE, "Your status was increased to HURT");
+		case INJURED:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was increased to HURT");
 			health = Health.HURT;
 			break;
+		case SEVEREINJURED:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was increased to INJURED");
+			health = Health.INJURED;
+			break;
+		case WOUNDED:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was increased to SEVERELY INJURED");
+			health = Health.SEVEREINJURED;
+			break;
+		case NEARDEAD:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was increased to WOUNDED");
+			health = Health.WOUNDED;
+			break;
 		case DEAD:
-			Logger.log(LogType.RESPONSE, "You are already dead... you lost.");
+			if(showMessage) Logger.log(LogType.RESPONSE, "You are already dead... you lost.");
 			break;
 		}
 	}
 	
 	public static void decrementHealth() {
+		decrementHealth(true);
+	}
+
+	public static void decrementHealth(boolean showMessage) {
 		switch (health) {
 		case DEAD: 
-			Logger.log(LogType.RESPONSE, "Your dead body loses even more life... somehow.");
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your dead body loses even more life... somehow.");
 			break;
-		case WOUNDED:
-			Logger.log(LogType.RESPONSE, "Your status was reduced to DEAD.\nYou died!");
+		case NEARDEAD:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was reduced to DEAD.\nYou died!");
 			health = Health.DEAD;
 			break;
-		case HURT:
-			Logger.log(LogType.RESPONSE, "Your status was reduced to WOUNDED.");
+		case WOUNDED:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was reduced to NEARLY DEAD.");
+			health = Health.NEARDEAD;
+			break;
+		case SEVEREINJURED:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was reduced to WOUNDED.");
 			health = Health.WOUNDED;
 			break;
-		case HEALTHY:
-			Logger.log(LogType.RESPONSE, "Your status was reduced to HURT.");
+		case INJURED:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was reduced to SEVERELY INJURED.");
+			health = Health.SEVEREINJURED;
+			break;
+		case HURT:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was reduced to INJURED.");
+			health = Health.INJURED;
+			break;
+		case SCATHED:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was reduced to HURT.");
 			health = Health.HURT;
 			break;
+		case HEALTHY:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was reduced to SCATHED.");
+			health = Health.SCATHED;
+			break;
+		}
+	}
+	
+	public static void changeHealth(int change) {
+		if(change < 0) {
+			change = Math.abs(change);
+			while (change > 0) {
+				decrementHealth(false);
+				change--;
+			}
+		} else if(change > 0) {
+			while (change > 0) {
+				incrementHealth(false);
+				change--;
+			}
 		}
 	}
 

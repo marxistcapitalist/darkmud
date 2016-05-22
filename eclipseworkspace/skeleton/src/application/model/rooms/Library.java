@@ -6,6 +6,8 @@ import application.model.Room;
 import application.model.items.Chest;
 import application.model.items.Scenery;
 import application.model.items.Treasure;
+import application.view.LogEntry.LogType;
+import application.view.Logger;
 import application.MapManager;
 import application.model.Doorway;
 import application.model.Doorway.Direction;
@@ -36,6 +38,12 @@ public class Library extends Room {
 				}
 				if(i == 3)
 					MapManager.moveOnWin();
+			}
+			
+			@Override
+			public void executeInspect() {
+				Logger.log(LogType.RESPONSE, "The book has spaces for 3 items, labelled: \"hair brush\", \"hatchet\", and \"red hood\".\nIt says at the bottom: \"Find these items three, and out of this dreamworld ye will be.\"");
+				super.executeInspect();
 			}
 		});
 		addItem(new Scenery("Bookshelves", "Many", "conain various old tomes, from the Necronomicon to the Bible."));

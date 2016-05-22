@@ -7,6 +7,8 @@ import application.model.interfaces.Inventoryable;
 
 public class Apple extends Item implements Inventoryable, Consumable {
 	
+	private int health;
+	
 	public Apple() { super(); }
 	
 	public Apple(String name) {
@@ -16,7 +18,13 @@ public class Apple extends Item implements Inventoryable, Consumable {
 	public Apple(String name, String description, String information) {
 		this(name);
 		super.description = description;
-		super.information = information;	
+		super.information = information;
+		this.health = 2;
+	}
+	
+	public Apple(String name, String description, String information, int health) {
+		this(name, description, information);
+		this.health = health;
 	}
 
 	@Override
@@ -32,10 +40,7 @@ public class Apple extends Item implements Inventoryable, Consumable {
 	@Override
 	public void executeUseConsumed() {
 		super.executeUseConsumed();
-		if (description.equalsIgnoreCase("rotten"))
-			MapManager.decrementHealth();
-		else
-			MapManager.incrementHealth();
+		MapManager.changeHealth(this.health);
 	}
 
 }
