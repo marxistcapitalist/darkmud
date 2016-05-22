@@ -1,0 +1,25 @@
+package application.model.rooms;
+
+import java.util.HashMap;
+
+import application.model.Room;
+import application.model.Doorway;
+import application.model.Doorway.Direction;
+ 
+public class CandyYard extends Room {
+	
+	public static String identifier = "CandyYard";
+
+	public CandyYard (HashMap<String, Room> rooms) { 
+		super(rooms, "A yard made of candy! Yum", "You spot a yard full of plant-shaped candy");
+		super.id = identifier;
+	}
+	
+	@Override public void initialize () {
+		// Add Doorways 
+		addDoorway(new Doorway(Direction.SOUTH, this.rooms.get(BreadcrumbB.identifier)));
+		
+		// Add Items, Enemies, Weapons, Bags, etc.
+		
+	}
+}

@@ -37,6 +37,7 @@ public class BrushTower extends Room {
 		removeDoorway(this.doorW);
 		removeDoorway(this.doorE);
 		removeDoorway(this.doorN);
+		this.description = "You are standing in the top room of a tall tower.\nThe room is now vacant of both witches and beautiful maidens";
 		addDoorway(new Doorway(Direction.WEST, this.rooms.get(ClearingW.identifier)));
 		addDoorway(new Doorway(Direction.EAST, this.rooms.get(ClearingE.identifier)));
 		addDoorway(new Doorway(Direction.NORTH, this.rooms.get(ClearingN.identifier)));

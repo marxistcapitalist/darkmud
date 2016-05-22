@@ -15,11 +15,24 @@ import application.model.interfaces.Keyedable;
 import application.model.interfaces.Killable;
 import application.model.interfaces.Statusable;
 import application.model.rooms.Base;
+import application.model.rooms.BreadcrumbA;
+import application.model.rooms.BreadcrumbB;
+import application.model.rooms.BreadcrumbC;
+import application.model.rooms.BreadcrumbD;
+import application.model.rooms.BriarPatch;
 import application.model.rooms.BrushTower;
+import application.model.rooms.CandyHouse;
+import application.model.rooms.CandyKitchen;
+import application.model.rooms.CandyOven;
+import application.model.rooms.CandyStorage;
+import application.model.rooms.CandyYard;
 import application.model.rooms.Clearing;
 import application.model.rooms.ClearingE;
 import application.model.rooms.ClearingN;
 import application.model.rooms.ClearingW;
+import application.model.rooms.CrossRoads;
+import application.model.rooms.ForestA;
+import application.model.rooms.ForestPath;
 import application.model.rooms.FrontYard;
 import application.model.rooms.Grassland;
 import application.model.rooms.GrueStorage;
@@ -89,6 +102,19 @@ public class MapManager {
 		rooms.put(ClearingN.identifier, new ClearingN(rooms));
 		rooms.put(ClearingE.identifier, new ClearingE(rooms));
 		rooms.put(ToadstoolRing.identifier, new ToadstoolRing(rooms));
+		rooms.put(ForestA.identifier, new ForestA(rooms));
+		rooms.put(BriarPatch.identifier, new BriarPatch(rooms));
+		rooms.put(ForestPath.identifier, new ForestPath(rooms));
+		rooms.put(CrossRoads.identifier, new CrossRoads(rooms));
+		rooms.put(BreadcrumbA.identifier, new BreadcrumbA(rooms));
+		rooms.put(BreadcrumbB.identifier, new BreadcrumbB(rooms));
+		rooms.put(BreadcrumbC.identifier, new BreadcrumbC(rooms));
+		rooms.put(BreadcrumbD.identifier, new BreadcrumbD(rooms));
+		rooms.put(CandyYard.identifier, new CandyYard(rooms));
+		rooms.put(CandyHouse.identifier, new CandyHouse(rooms));
+		rooms.put(CandyStorage.identifier, new CandyStorage(rooms));
+		rooms.put(CandyKitchen.identifier, new CandyKitchen(rooms));
+		rooms.put(CandyOven.identifier, new CandyOven(rooms));
 		
 		//Executes the initialize method in every mapped room
 		//Which must be done after the map itself is built

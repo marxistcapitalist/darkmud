@@ -1,0 +1,28 @@
+package application.model.rooms;
+
+import java.util.HashMap;
+
+import application.model.Room;
+import application.model.Doorway;
+import application.model.Doorway.Direction;
+ 
+public class BreadcrumbB extends Room {
+	
+	public static String identifier = "BreadcrumbA";
+
+	public BreadcrumbB (HashMap<String, Room> rooms) { 
+		super(rooms, "You are on a trail in a dark forest. There are breadcrumbs on the ground for some reason.\nThe trail continues to your east and north", "You observe a dark trail with a line of breadcrumbs");
+		super.id = identifier;
+	}
+	
+	@Override public void initialize () {
+		// Add Doorways 
+		addDoorway(new Doorway(Direction.SOUTH, this.rooms.get(CrossRoads.identifier)));
+		addDoorway(new Doorway(Direction.WEST, this.rooms.get(ForestA.identifier)));
+		addDoorway(new Doorway(Direction.EAST, this.rooms.get(BreadcrumbC.identifier)));
+		addDoorway(new Doorway(Direction.NORTH, this.rooms.get(BeradcrumbB.identifier)));
+		
+		// Add Items, Enemies, Weapons, Bags, etc.
+		
+	}
+}
