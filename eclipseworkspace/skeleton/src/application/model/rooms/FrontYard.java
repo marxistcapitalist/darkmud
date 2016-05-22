@@ -14,7 +14,7 @@ public class FrontYard extends Room {
 	public static String identifier = "FrontYard";
 
 	public FrontYard (HashMap<String, Room> rooms) { 
-		super(rooms, "You are standing in the front yard of a large, dilapidated country home.\nThe front door seems to be wide open.", "You see the front yard of the country house");
+		super(rooms, "You are standing in the front yard of a large, dilapidated country home\nThe front door seems to be wide open", "You see the front yard of the country house");
 		super.id = identifier;
 	}
 	

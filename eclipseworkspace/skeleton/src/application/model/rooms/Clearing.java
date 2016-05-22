@@ -13,7 +13,7 @@ public class Clearing extends Room {
 	public static String identifier = "Clearing";
 
 	public Clearing (HashMap<String, Room> rooms) { 
-		super(rooms, "You stand atop a grassy hill. A large country houes lies to the south.", "You see a grassy hilltop.");
+		super(rooms, "You stand atop a grassy hill. A large country house lies to the south.", "You see a grassy hilltop.");
 		super.id = identifier;
 	}
 	

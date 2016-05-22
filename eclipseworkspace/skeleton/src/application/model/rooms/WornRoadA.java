@@ -20,7 +20,7 @@ public class WornRoadA extends Room {
 		addDoorway(new Doorway(Direction.NORTH, this.rooms.get(ClearingE.identifier)));
 		addDoorway(new Doorway(Direction.WEST, this.rooms.get(WornRoadB.identifier)));
 		addDoorway(new Doorway(Direction.SOUTH, this.rooms.get(Clearing.identifier)));
-		//addDoorway(new Doorway(Direction.EAST, this.rooms.get(ForestA.identifier)));
+		addDoorway(new Doorway(Direction.EAST, this.rooms.get(ForestA.identifier)));
 		
 		// Add Items, Enemies, Weapons, Bags, etc.
 	}

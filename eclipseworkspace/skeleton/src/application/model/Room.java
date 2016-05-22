@@ -163,6 +163,10 @@ public class Room {
 		this.items.add(item);
 	}
 	
+	public void removeItem(Item item) {
+		this.items.remove(item);
+	}
+	
 	public String getDescription () {
 		return this.description + ".";
 	}

@@ -26,6 +26,7 @@ public abstract class SmartParser {
 	private static final String REST = "REST";
 	private static final String PUT = "PUT";
 	private static final String INSPECT = "INSPECT";
+	private static final String LOOK = "LOOK";
 	private static final String FROM = "FROM";
 	private static final String RESTART = "RESTART";
 	private static final String QUIT = "QUIT";
@@ -40,11 +41,11 @@ public abstract class SmartParser {
 	private static final String DOWN = "DOWN";
 	
 	private static final ArrayList<String> KEY_WORDS = new ArrayList<>(Arrays.asList(
-			"GO", "TAKE", "PICK", "DROP", "USE","REST", "PUT", "INSPECT", 
+			"GO", "TAKE", "PICK", "DROP", "USE", "REST", "PUT", "INSPECT", "LOOK",
 			"RESTART", "QUIT", "HELP", "THROW", "INVENTORY", "ALL", "EVERYTHING", "ROOM" ));
 
 	private static final ArrayList<String> IGNORED_WORDS = new ArrayList<>(Arrays.asList(
-			"THE", "A", "ONE", "OF", "THAT", "THIS", "PLEASE", "NO","OVER", "THERE", "AND", "TO"));
+			"THE", "A", "ONE", "OF", "THAT", "THIS", "PLEASE", "NO", "OVER", "THERE", "AND", "TO"));
 	
 	public static void parse (String input) {
 		
@@ -667,6 +668,7 @@ public abstract class SmartParser {
 			error();
 			return;
 		case INSPECT:
+		case LOOK:
 			switch (input.size()) {
 			case 1:
 				Logger.log(LogType.DEFAULT, "I need something to inspect...");

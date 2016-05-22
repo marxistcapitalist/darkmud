@@ -16,7 +16,7 @@ public class Library extends Room {
 	public static String identifier = "Library";
 
 	public Library (HashMap<String, Room> rooms) { 
-		super(rooms, "You observe a mysteriously well-maintained library for a house in such disrepair.\n All around are bookcases full of books, but what catches your eye is a\nbook that seems chained to a padestal in the middle of the room", "You a well-kept library, full of books");
+		super(rooms, "You observe a mysteriously well-maintained library for a house in such disrepair.\n All around are bookcases full of books, but what catches your eye is a\nbook that seems chained to a pedestal in the middle of the room", "You a well-kept library, full of books");
 		super.id = identifier;
 	}
 	
@@ -25,7 +25,7 @@ public class Library extends Room {
 		addDoorway(new Doorway(Direction.EAST, this.rooms.get(House.identifier)));
 		
 		// Add Items, Enemies, Weapons, Bags, etc.
-		addItem(new Chest("Mysterious", "Book") {
+		addItem(new Chest("Book", "Mysterious") {
 			@Override
 			public void executePutIn(Item item) {
 				super.executePutIn(item);
