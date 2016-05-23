@@ -1,0 +1,62 @@
+package application.model.items;
+
+import application.MapManager;
+import application.model.Item;
+import application.model.interfaces.Killable;
+import application.model.interfaces.Statusable;
+import application.model.rooms.GrandmaCabin;
+import application.view.Logger;
+import application.view.LogEntry.LogType;
+
+public class Wolf extends Item implements Killable {
+	
+	public int health =  0;
+	
+	public Wolf() { super(); }
+	
+	public Wolf(String name) {
+		identifier = name;
+	}
+	
+	public Wolf(String name, String description, String information, int health) {
+		this(name);
+		super.description = description;
+		super.information = information;	
+		this.health = health;
+	}
+	
+
+	@Override
+	public void executeUsedUpon(Item item) {
+		super.executeUsedUpon(item);
+		this.health -= 2;
+		if (item instanceof Statusable) 
+			this.health -= 10;
+		if (this.health <= 0) {
+			MapManager.getCurrentRoom().getRoomItems().remove(this);
+			Logger.log(LogType.KILL, "You killed the Wolf!");
+			Logger.log(LogType.RESPONSE, "As the wolf dies, you hear some people yelling from within its stomach.\nYou manage to rip it open.");	
+			GrandmaCabin room = (GrandmaCabin) MapManager.getCurrentRoom(); // As a result of this, this should ONLY exist in GrandmaCabin room
+			room.openRoom();
+		}
+	}
+
+	@Override
+	public void executeUsedUponConsumed(Item item) {
+		super.executeUsedUponConsumed(item);
+		this.health -= 1;
+		if (this.health <= 0) {
+			MapManager.getCurrentRoom().getRoomItems().remove(this);
+			Logger.log(LogType.KILL, "You killed the Wolf!");
+			Logger.log(LogType.RESPONSE, "As the wolf dies, you hear some people yelling from within its stomach.\nYou manage to rip it open.");	
+			GrandmaCabin room = (GrandmaCabin) MapManager.getCurrentRoom(); // As a result of this, this should ONLY exist in GrandmaCabin room
+			room.openRoom();
+		}
+	}
+	
+	@Override
+	public void executeInspect() {
+		Logger.log(LogType.RESPONSE, "The " + this.description + " " + this.identifier + " " + this.information + "!");	
+	}
+
+}

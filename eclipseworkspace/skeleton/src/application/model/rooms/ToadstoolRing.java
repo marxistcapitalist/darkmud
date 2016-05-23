@@ -5,8 +5,6 @@ import java.util.HashMap;
 import application.model.Room;
 import application.MapManager;
 import application.MapManager.Health;
-import application.model.Doorway;
-import application.model.Doorway.Direction;
  
 public class ToadstoolRing extends Room {
 	

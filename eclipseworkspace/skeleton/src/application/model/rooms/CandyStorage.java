@@ -3,7 +3,6 @@ package application.model.rooms;
 import java.util.HashMap;
 
 import application.model.Room;
-import application.model.items.Apple;
 import application.model.items.Scenery;
 import application.model.Doorway;
 import application.model.Doorway.Direction;

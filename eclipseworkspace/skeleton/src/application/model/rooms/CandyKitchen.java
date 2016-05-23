@@ -16,7 +16,7 @@ public class CandyKitchen extends Room {
 	private Doorway doorE = null;
 
 	public CandyKitchen (HashMap<String, Room> rooms) { 
-		super(rooms, "As you enter, all the enterances SLAM SHUT!\nThe main fixture of this kitchen is a massive iron oven.\nA witch stands prepared to make you into a meal", "You see a tall, stone-brick tower. It seems to be climbable");
+		super(rooms, "As you enter, all the enterances SLAM SHUT!\nThe main fixture of this kitchen is a massive iron oven.\nA witch stands prepared to make you into a meal", "You see a kitchen with a large, iron oven. The entire room emits hot air");
 		super.id = identifier;
 	}
 	@Override public void initialize () {

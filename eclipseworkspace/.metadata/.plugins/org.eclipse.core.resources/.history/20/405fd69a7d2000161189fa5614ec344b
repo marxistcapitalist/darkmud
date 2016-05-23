@@ -1,0 +1,39 @@
+package application.model.rooms;
+
+import java.util.HashMap;
+
+import application.model.Room;
+import application.model.items.Scenery;
+import application.model.items.CandyWitch;
+import application.model.Doorway;
+import application.model.Doorway.Direction;
+ 
+public class GrandmaCabin extends Room {
+	
+	public static String identifier = "CandyKitchen";
+	
+	private Doorway doorS = null;
+	private Doorway doorE = null;
+
+	public GrandmaCabin (HashMap<String, Room> rooms) { 
+		super(rooms, "As you enter, all the enterances SLAM SHUT!\nThe main fixture of this kitchen is a massive iron oven.\nA witch stands prepared to make you into a meal", "You see a tall, stone-brick tower. It seems to be climbable");
+		super.id = identifier;
+	}
+	@Override public void initialize () {
+		// SPECIAL CASE - The doorways are inoperable until you have defeated the witch
+		this.doorS = new Doorway(Direction.SOUTH, this.rooms.get(CandyHouse.identifier), "SOUTH", "impossiblekey");
+		this.doorE = new Doorway(Direction.EAST, this.rooms.get(CandyOven.identifier), "EAST", "impossiblekey");
+		
+		// Add Items, Enemies, Weapons, Bags, etc.
+		addItem(new CandyWitch("Witch", "Old", "is very vulgar-looking, and wields a sharp candy knife", 10));
+		addItem(new Scenery("Oven", "Iron", "is very large, and lets out a warm draft"));
+	}
+	
+	public void openRoom() {
+		removeDoorway(this.doorE);
+		removeDoorway(this.doorS);
+		this.description = "The main fixture of this kitchen is a massive iron oven, which is now wide open.\nThe room is now vacant of witches. Good";
+		addDoorway(new Doorway(Direction.EAST, this.rooms.get(CandyOven.identifier)));
+		addDoorway(new Doorway(Direction.SOUTH, this.rooms.get(CandyHouse.identifier)));
+	}
+}

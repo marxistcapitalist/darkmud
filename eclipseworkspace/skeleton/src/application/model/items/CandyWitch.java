@@ -47,7 +47,6 @@ public class CandyWitch extends Item implements Killable {
 		this.health -= 1;
 		if (this.health <= 0) {
 			MapManager.getCurrentRoom().getRoomItems().remove(this);
-			MapManager.getCurrentRoom().getRoomItems().add(new Treasure("Brush", "Pearled", "is inlaid with a beautiful pearl. It seems familiar somehow"));
 			Logger.log(LogType.KILL, "You killed the Witch!");
 			Logger.log(LogType.RESPONSE, "As the witch dies, you notice some child-looking shapes in the huge oven.\nYou turn it off and open the door.");	
 			CandyKitchen room = (CandyKitchen) MapManager.getCurrentRoom(); // As a result of this, this should ONLY exist in BrushTower room

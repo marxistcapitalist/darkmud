@@ -31,6 +31,9 @@ import application.model.rooms.ClearingE;
 import application.model.rooms.ClearingN;
 import application.model.rooms.ClearingW;
 import application.model.rooms.CrossRoads;
+import application.model.rooms.FlowerTrailA;
+import application.model.rooms.FlowerTrailB;
+import application.model.rooms.FloweryField;
 import application.model.rooms.ForestA;
 import application.model.rooms.ForestPath;
 import application.model.rooms.FrontYard;
@@ -116,6 +119,9 @@ public class MapManager {
 		rooms.put(CandyStorage.identifier, new CandyStorage(rooms));
 		rooms.put(CandyKitchen.identifier, new CandyKitchen(rooms));
 		rooms.put(CandyOven.identifier, new CandyOven(rooms));
+		rooms.put(FlowerTrailA.identifier, new FlowerTrailA(rooms));
+		rooms.put(FlowerTrailB.identifier, new FlowerTrailB(rooms));
+		rooms.put(FloweryField.identifier, new FloweryField(rooms));
 		
 		//Executes the initialize method in every mapped room
 		//Which must be done after the map itself is built

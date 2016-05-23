@@ -1,0 +1,27 @@
+package application.model.rooms;
+
+import java.util.HashMap;
+
+import application.model.Room;
+import application.model.Doorway;
+import application.model.Doorway.Direction;
+ 
+public class FlowerTrailD extends Room {
+	
+	public static String identifier = "FlowerTrailD";
+
+	public FlowerTrailD (HashMap<String, Room> rooms) { 
+		super(rooms, "You are standing at the end of a flowery trail. You spot an old cabin to the east", "You observe what appears to be the end of the flower trail");
+		super.id = identifier;
+	}
+	
+	@Override public void initialize () {
+		// Add Doorways 
+		addDoorway(new Doorway(Direction.NORTH, this.rooms.get(FlowerTrailB.identifier)));
+		addDoorway(new Doorway(Direction.EAST, this.rooms.get(FlowerTrailE.identifier)));
+		addDoorway(new Doorway(Direction.SOUTH, this.rooms.get(FlowerTrailD.identifier)));
+		
+		// Add Items, Enemies, Weapons, Bags, etc.
+		
+	}
+}
