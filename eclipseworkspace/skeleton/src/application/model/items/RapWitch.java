@@ -46,6 +46,8 @@ public class RapWitch extends Item implements Killable {
 	public void executeUsedUponConsumed(Item item) {
 		super.executeUsedUponConsumed(item);
 		this.health -= 1;
+		if (item instanceof Statusable) 
+			this.health -= 10;
 		if (this.health <= 0) {
 			MapManager.getCurrentRoom().getRoomItems().remove(this);
 			MapManager.getCurrentRoom().getRoomItems().add(new Treasure("Brush", "Pearled", "is inlaid with a beautiful pearl. It seems familiar somehow"));

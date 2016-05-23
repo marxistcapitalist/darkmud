@@ -5,6 +5,7 @@ import java.util.HashMap;
 import application.model.Room;
 import application.model.Doorway;
 import application.model.Doorway.Direction;
+import application.model.items.WaterBucket;
  
 public class ForestA extends Room {
 	
@@ -23,6 +24,6 @@ public class ForestA extends Room {
 		addDoorway(new Doorway(Direction.NORTH, this.rooms.get(ToadstoolRing.identifier)));
 		
 		// Add Items, Enemies, Weapons, Bags, etc.
-		
+		addItem(new WaterBucket("Bucket", "Water", "is full to the brim with murky water (it's not drinkable)", "witches"));
 	}
 }

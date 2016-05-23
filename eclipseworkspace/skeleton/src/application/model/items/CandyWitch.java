@@ -45,6 +45,8 @@ public class CandyWitch extends Item implements Killable {
 	public void executeUsedUponConsumed(Item item) {
 		super.executeUsedUponConsumed(item);
 		this.health -= 1;
+		if (item instanceof Statusable) 
+			this.health -= 10;
 		if (this.health <= 0) {
 			MapManager.getCurrentRoom().getRoomItems().remove(this);
 			Logger.log(LogType.KILL, "You killed the Witch!");

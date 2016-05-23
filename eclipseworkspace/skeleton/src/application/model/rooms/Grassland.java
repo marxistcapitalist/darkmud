@@ -5,6 +5,7 @@ import java.util.HashMap;
 import application.model.Room;
 import application.model.Doorway;
 import application.model.Doorway.Direction;
+import application.model.items.Rock;
  
 public class Grassland extends Room {
 	
@@ -21,5 +22,6 @@ public class Grassland extends Room {
 		addDoorway(new Doorway(Direction.EAST, this.rooms.get(WornRoadB.identifier)));
 		
 		// Add Items, Enemies, Weapons, Bags, etc.
+		addItem(new Rock("Rock", "Sharp", "is very sharp"));
 	}
 }

@@ -3,6 +3,7 @@ package application.model.rooms;
 import java.util.HashMap;
 
 import application.model.Room;
+import application.model.items.Rock;
 import application.model.Doorway;
 import application.model.Doorway.Direction;
  
@@ -20,6 +21,6 @@ public class BreadcrumbD extends Room {
 		addDoorway(new Doorway(Direction.WEST, this.rooms.get(BreadcrumbC.identifier)));
 		
 		// Add Items, Enemies, Weapons, Bags, etc.
-		
+		addItem(new Rock("Rock", "Kid", "insists his name is Robert Ritchie"));
 	}
 }

@@ -3126,3 +3126,178 @@ java.io.InvalidClassException: org.eclipse.m2e.core.internal.project.registry.Ba
 2016-05-23 01:29:02,366 [Worker-330] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
 2016-05-23 01:29:02,372 [Worker-330] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2016-05-23 01:29:02,379 [Worker-330] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Ethan\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:06:47,731 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:06:47,745 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:06:47,755 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:06:47,758 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:07:00,615 [Worker-12] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: skeleton:skeleton:0.0.1-SNAPSHOT @ C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\pom.xml.
+2016-05-23 10:07:01,244 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:07:01,252 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-05-23 10:07:01,253 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:07:01,255 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:07:02,313 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:07:02,323 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:07:02,437 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:07:02,440 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:07:04,858 [Worker-5] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: skeleton:skeleton:0.0.1-SNAPSHOT @ C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\pom.xml.
+2016-05-23 10:07:05,077 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:07:05,082 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-05-23 10:07:05,090 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:07:05,095 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:07:15,021 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:07:15,024 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-05-23 10:07:15,028 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:07:15,033 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:08:47,817 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:08:47,827 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:08:47,831 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:08:47,838 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:09:04,969 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:09:04,994 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:09:05,003 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:09:05,014 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:12:07,319 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:12:07,337 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:12:07,349 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:12:07,358 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:14:37,653 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:14:37,662 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:14:37,666 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:14:37,672 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:18:45,600 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:18:45,610 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:18:45,615 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:18:45,621 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:20:55,331 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:20:55,341 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:20:55,346 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:20:55,355 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:23:19,667 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:23:19,676 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:23:19,682 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:23:19,690 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:23:23,327 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:23:23,336 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:23:23,341 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:23:23,346 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:24:17,078 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:24:17,090 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:24:17,096 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:24:17,103 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:25:56,011 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:25:56,022 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:25:56,028 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:25:56,036 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:37:28,496 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:37:28,504 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:37:28,509 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:37:28,515 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:40:08,649 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:40:08,672 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:40:08,685 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:40:08,700 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:40:15,695 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:40:15,707 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:40:15,712 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:40:15,720 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:43:35,176 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:43:35,184 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:43:35,189 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:43:35,197 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:47:13,940 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:47:13,950 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:47:13,955 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:47:13,960 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:47:19,632 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:47:19,641 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:47:19,647 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:47:19,657 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:48:42,983 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:48:42,992 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:48:43,001 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:48:43,015 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:50:58,222 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:50:58,230 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:50:58,234 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:50:58,248 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:51:29,530 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:51:29,552 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:51:29,563 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:51:29,579 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:51:53,830 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:51:53,838 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:51:53,842 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:51:53,848 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:51:57,979 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:51:57,994 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:51:57,999 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:51:58,006 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:52:37,458 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:52:37,479 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:52:37,492 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:52:37,506 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:53:09,368 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:53:09,375 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:53:09,379 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:53:09,385 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:53:13,291 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:53:13,299 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:53:13,303 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:53:13,308 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:53:41,875 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:53:41,883 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:53:41,887 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:53:41,893 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:54:30,788 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:54:30,812 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:54:30,823 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:54:30,838 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:54:40,516 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:54:40,536 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:54:40,548 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:54:40,563 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:54:58,290 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:54:58,312 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:54:58,322 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:54:58,337 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:56:02,528 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:56:02,542 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:56:02,550 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:56:02,559 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:56:23,219 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is out-of-date. Remote download required.
+2016-05-23 10:58:49,698 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:58:49,732 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:58:49,762 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:58:49,772 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:58:59,265 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:58:59,275 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:58:59,279 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:58:59,284 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:59:33,766 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:59:33,787 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:59:33,794 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:59:33,805 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:59:50,928 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:59:50,947 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:59:50,953 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:59:50,960 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 10:59:56,744 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:59:56,772 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 10:59:56,783 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 10:59:56,798 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 11:04:56,540 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 11:04:56,561 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 11:04:56,568 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 11:04:56,578 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 11:05:05,582 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 11:05:05,598 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 12 resources
+2016-05-23 11:05:05,609 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 11:05:05,627 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 11:05:10,864 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 11:05:10,869 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-05-23 11:05:10,874 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 11:05:10,879 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources
+2016-05-23 11:06:00,957 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 11:06:00,985 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2016-05-23 11:06:00,996 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-05-23 11:06:01,011 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\maxis\Documents\fables\fables\eclipseworkspace\skeleton\src\test\resources

@@ -1,0 +1,28 @@
+package application.model.rooms;
+
+import java.util.HashMap;
+
+import application.model.Room;
+import application.model.Doorway;
+import application.model.Doorway.Direction;
+ 
+public class ClearingE extends Room {
+	
+	public static String identifier = "ClearingE";
+
+	public ClearingE (HashMap<String, Room> rooms) { 
+		super(rooms, "You are standing in an empty clearing.\nYou spot a tall tower with a yellow rope (?) hanging from a window to the west", "You observe an empty clearing");
+		super.id = identifier;
+	}
+	
+	@Override public void initialize () {
+		// Add Doorways 
+		addDoorway(new Doorway(Direction.SOUTH, this.rooms.get(WornRoadA.identifier)));
+		addDoorway(new Doorway(Direction.WEST, this.rooms.get(BrushTower.identifier)));
+		addDoorway(new Doorway(Direction.EAST, this.rooms.get(ToadstoolRing.identifier)));
+		//addDoorway(new Doorway(Direction.NORTH, this.rooms.get(BriarPatch.identifier)));
+		
+		// Add Items, Enemies, Weapons, Bags, etc.
+		// TODO Add potion
+	}
+}

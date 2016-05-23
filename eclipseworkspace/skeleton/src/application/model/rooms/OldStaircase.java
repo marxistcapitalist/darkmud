@@ -3,6 +3,7 @@ package application.model.rooms;
 import java.util.HashMap;
 
 import application.model.Room;
+import application.model.items.Rock;
 import application.model.items.Scenery;
 import application.model.Doorway;
 import application.model.Doorway.Direction;
@@ -22,5 +23,6 @@ public class OldStaircase extends Room {
 		
 		// Add Items, Enemies, Weapons, Bags, etc.
 		addItem(new Scenery("Staircase", "Decaying", "is entirely unusable. It's not even worth trying"));
+		addItem(new Rock("Rock", "Dickish", "looks phallic"));
 	}
 }

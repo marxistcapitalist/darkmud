@@ -1,0 +1,37 @@
+package application.model.items;
+
+import application.model.Item;
+import application.model.interfaces.Consumable;
+import application.model.interfaces.Inventoryable;
+import application.model.interfaces.Statusable;
+import application.view.Logger;
+
+public class WaterBucket extends Item implements Inventoryable, Consumable, Statusable {
+
+	private String target;
+	
+	public WaterBucket() { super(); }
+	
+	public WaterBucket(String name) {
+		identifier = name;
+	}
+	
+	public WaterBucket(String name, String description, String information) {
+		this(name);
+		super.description = description;
+		super.information = information;
+		this.target = "nothing in particular";
+	}
+	
+	public WaterBucket(String name, String description, String information, String target) {
+		this(name, description, information);
+		this.target = target;
+		
+	}
+	
+	@Override public void executeInspect() {
+		super.executeInspect();
+		Logger.log(LogType.RESPONSE, "(This item seems great for defeating " + target + ".)");
+	}
+	
+}

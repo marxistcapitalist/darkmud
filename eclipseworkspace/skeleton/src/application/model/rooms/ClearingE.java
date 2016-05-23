@@ -23,6 +23,6 @@ public class ClearingE extends Room {
 		//addDoorway(new Doorway(Direction.NORTH, this.rooms.get(BriarPatch.identifier)));
 		
 		// Add Items, Enemies, Weapons, Bags, etc.
-		// TODO Add potion
+		
 	}
 }

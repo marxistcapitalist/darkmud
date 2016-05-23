@@ -3,6 +3,7 @@ package application.model.rooms;
 import java.util.HashMap;
 
 import application.model.Room;
+import application.model.items.WaterBucket;
 import application.model.Doorway;
 import application.model.Doorway.Direction;
  
@@ -21,5 +22,6 @@ public class ClearingW extends Room {
 		addDoorway(new Doorway(Direction.EAST, this.rooms.get(BrushTower.identifier)));
 		
 		// Add Items, Enemies, Weapons, Bags, etc.
+		
 	}
 }

@@ -1,0 +1,20 @@
+package application.model.items;
+
+import application.model.Item;
+import application.model.interfaces.Inventoryable;
+
+public class WaterBucket extends Item implements Inventoryable {
+
+	public WaterBucket() { super(); }
+	
+	public WaterBucket(String name) {
+		identifier = name;
+	}
+	
+	public WaterBucket(String name, String description, String information) {
+		this(name);
+		super.description = description;
+		super.information = information;	
+	}
+	
+}

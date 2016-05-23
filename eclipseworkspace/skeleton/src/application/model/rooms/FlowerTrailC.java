@@ -3,6 +3,7 @@ package application.model.rooms;
 import java.util.HashMap;
 
 import application.model.Room;
+import application.model.items.Rock;
 import application.model.Doorway;
 import application.model.Doorway.Direction;
  
@@ -22,6 +23,6 @@ public class FlowerTrailC extends Room {
 		addDoorway(new Doorway(Direction.SOUTH, this.rooms.get(FlowerTrailD.identifier)));
 		
 		// Add Items, Enemies, Weapons, Bags, etc.
-		
+		addItem(new Rock("Rock", "Square", "is very square (how odd)"));
 	}
 }

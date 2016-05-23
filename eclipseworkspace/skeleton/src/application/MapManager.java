@@ -76,8 +76,9 @@ public class MapManager {
 	private static HashMap<String, Room> rooms = new HashMap<String, Room>();
 	
 	public enum Health {
-		HEALTHY ("Healthy"), SCATHED ("Scathed"), HURT ("Hurt"), INJURED ("Injured"), 
-		SEVEREINJURED ("Severely Injured"), WOUNDED ("Wounded"), NEARDEAD ("Nearly Dead"), DEAD ("Dead");
+		/*HEALTHY ("Healthy"), SCATHED ("Scathed"), HURT ("Hurt"), INJURED ("Injured"), 
+		SEVEREINJURED ("Severely Injured"), WOUNDED ("Wounded"), NEARDEAD ("Nearly Dead"), DEAD ("Dead");*/
+		HEALTHY ("Healthy"), HURT ("Hurt"), WOUNDED ("Wounded"), DEAD ("Dead");
 		
 		private String status;
 		
@@ -168,7 +169,7 @@ public class MapManager {
 		return health;
 	}
 	
-	public static void setHealth(Health h) {
+	/*public static void setHealth(Health h) {
 		switch(h) {
 		case HEALTHY:
 			Logger.log(LogType.RESPONSE, "Your status was changed to HEALTHY");
@@ -203,13 +204,34 @@ public class MapManager {
 			health = Health.DEAD;
 			break;
 		}
+	}*/
+	
+	public static void setHealth(Health h) {
+		switch(h) {
+		case HEALTHY:
+			Logger.log(LogType.RESPONSE, "Your status was changed to HEALTHY");
+			health = Health.HEALTHY;
+			break;
+		case HURT:
+			Logger.log(LogType.RESPONSE, "Your status was changed to HURT");
+			health = Health.HURT;
+			break;
+		case WOUNDED:
+			Logger.log(LogType.RESPONSE, "Your status was changed to WOUNDED");
+			health = Health.WOUNDED;
+			break;
+		case DEAD:
+			Logger.log(LogType.RESPONSE, "Your status was changed to DEAD\nYou died!");
+			health = Health.DEAD;
+			break;
+		}
 	}
 	
 	public static void incrementHealth() {
 		incrementHealth(true);
 	}
 
-	public static void incrementHealth(boolean showMessage) {
+	/*public static void incrementHealth(boolean showMessage) {
 		switch (health) {
 		case HEALTHY:
 			if(showMessage) Logger.log(LogType.RESPONSE, "You were already at full health");
@@ -242,13 +264,32 @@ public class MapManager {
 			if(showMessage) Logger.log(LogType.RESPONSE, "You are already dead... you lost.");
 			break;
 		}
+	}*/
+	
+	public static void incrementHealth(boolean showMessage) {
+		switch (health) {
+		case HEALTHY:
+			if(showMessage) Logger.log(LogType.RESPONSE, "You were already at full health");
+			break;
+		case HURT:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was increased to HEALTHY");
+			health = Health.HEALTHY;
+			break;
+		case WOUNDED:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was increased to HURT");
+			health = Health.HURT;
+			break;
+		case DEAD:
+			if(showMessage) Logger.log(LogType.RESPONSE, "You are already dead... you lost.");
+			break;
+		}
 	}
 	
 	public static void decrementHealth() {
 		decrementHealth(true);
 	}
 
-	public static void decrementHealth(boolean showMessage) {
+	/*public static void decrementHealth(boolean showMessage) {
 		switch (health) {
 		case DEAD: 
 			if(showMessage) Logger.log(LogType.RESPONSE, "Your dead body loses even more life... somehow.");
@@ -282,7 +323,28 @@ public class MapManager {
 			health = Health.SCATHED;
 			break;
 		}
+	}*/
+	
+	public static void decrementHealth(boolean showMessage) {
+		switch (health) {
+		case DEAD: 
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your dead body loses even more life... somehow.");
+			break;
+		case WOUNDED:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was reduced to DEAD.");
+			health = Health.DEAD;
+			break;
+		case HURT:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was reduced to WOUNDED.");
+			health = Health.WOUNDED;
+			break;
+		case HEALTHY:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was reduced to HURT.");
+			health = Health.HURT;
+			break;
+		}
 	}
+
 	
 	public static void changeHealth(int change) {
 		if(change < 0) {

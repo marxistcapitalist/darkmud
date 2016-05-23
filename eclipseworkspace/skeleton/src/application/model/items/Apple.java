@@ -19,7 +19,7 @@ public class Apple extends Item implements Inventoryable, Consumable {
 		this(name);
 		super.description = description;
 		super.information = information;
-		this.health = 2;
+		this.health = 1;
 	}
 	
 	public Apple(String name, String description, String information, int health) {

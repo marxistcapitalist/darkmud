@@ -26,7 +26,7 @@ public class FlowerTrailE extends Room {
 		// Add Items, Enemies, Weapons, Bags, etc.
 		addItem(new Bag("Basket", "Pastry", 
 				new Apple("Donut", "Sugar", "looks so tasty, your mouth waters just viewing it"),
-				new Apple("Bun", "Cinnamon", "makes you think of a Cinnabon, but 20x better", 3),
+				new Apple("Bun", "Cinnamon", "makes you think of a Cinnabon, but 20x better", 2),
 				new Apple("Sandwich", "Normal", "... it's a sandwich")
 		));
 	}

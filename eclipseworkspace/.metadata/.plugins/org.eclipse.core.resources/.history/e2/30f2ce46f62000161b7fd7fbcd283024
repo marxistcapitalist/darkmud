@@ -1,0 +1,27 @@
+package application.model.rooms;
+
+import java.util.HashMap;
+
+import application.model.Room;
+import application.model.items.WaterBucket;
+import application.model.Doorway;
+import application.model.Doorway.Direction;
+ 
+public class ClearingW extends Room {
+	
+	public static String identifier = "ClearingW";
+
+	public ClearingW (HashMap<String, Room> rooms) { 
+		super(rooms, "You are standing in a wide, windy expanse.\nTo your east, you see a tower with some vines that may be climbable", "You see not-so-tranquil clearing, which is giving off a breeze");
+		super.id = identifier;
+	}
+	
+	@Override public void initialize () {
+		// Add Doorways 
+		addDoorway(new Doorway(Direction.SOUTH, this.rooms.get(Grassland.identifier)));
+		addDoorway(new Doorway(Direction.EAST, this.rooms.get(BrushTower.identifier)));
+		
+		// Add Items, Enemies, Weapons, Bags, etc.
+		addItem(new WaterBucket("Bucket", "Water", "is full to the brim with murky water (it's not drinkable)", "witches"));
+	}
+}
