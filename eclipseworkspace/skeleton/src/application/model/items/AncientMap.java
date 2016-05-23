@@ -41,7 +41,7 @@ public AncientMap() { super(); }
 	public void executeUse() {
 		super.executeUse();
 		try {
-			Desktop.getDesktop().browse(new URI("http://i.imgur.com/2pNUncP.gif"));
+			Desktop.getDesktop().browse(new URI("https://drive.google.com/file/d/0B2VfU1ozHZzIMk4zaXJZUW8wMWM/view?usp=sharing"));
 		} catch (IOException | URISyntaxException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

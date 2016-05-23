@@ -3,6 +3,7 @@ package application.model.rooms;
 import java.util.HashMap;
 
 import application.model.Room;
+import application.model.items.Apple;
 import application.model.Doorway;
 import application.model.Doorway.Direction;
  
@@ -21,6 +22,6 @@ public class ClearingN extends Room {
 		//addDoorway(new Doorway(Direction.EAST, this.rooms.get(BriarPatch.identifier)));
 		
 		// Add Items, Enemies, Weapons, Bags, etc.
-		// TODO Add potion
+		addItem(new Apple("Potion", "Red", "looks like a healing potion, considering the glowing", 5));
 	}
 }

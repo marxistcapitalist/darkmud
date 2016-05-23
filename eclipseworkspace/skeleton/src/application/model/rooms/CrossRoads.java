@@ -18,7 +18,7 @@ public class CrossRoads extends Room {
 	@Override public void initialize () {
 		// Add Doorways
 		addDoorway(new Doorway(Direction.WEST, this.rooms.get(ForestPath.identifier)));
-		//addDoorway(new Doorway(Direction.SOUTH, this.rooms.get(FlowerTrailA.identifier)));
+		addDoorway(new Doorway(Direction.SOUTH, this.rooms.get(FlowerTrailA.identifier)));
 		addDoorway(new Doorway(Direction.NORTH, this.rooms.get(BreadcrumbA.identifier)));
 		
 		// Add Items, Enemies, Weapons, Bags, etc.
