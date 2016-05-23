@@ -18,7 +18,7 @@ public class WolfStomach extends Room {
 	
 	@Override public void initialize () {
 		// Add Doorways 
-		addDoorway(new Doorway(Direction.WEST, this.rooms.get(CandyKitchen.identifier)));
+		addDoorway(new Doorway(Direction.WEST, this.rooms.get(GrandmaCabin.identifier)));
 		
 		// Add Items, Enemies, Weapons, Bags, etc.
 	}

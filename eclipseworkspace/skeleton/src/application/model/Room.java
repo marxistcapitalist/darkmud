@@ -19,6 +19,7 @@ public class Room {
 	public String information; // Description of the room when examined from another
 	
 	protected HashMap<String, Room> rooms;
+	@SuppressWarnings("serial")
 	private ArrayList<Doorway> doorways = new ArrayList<Doorway>()  {
 		@Override
 		public String toString() {
@@ -31,6 +32,7 @@ public class Room {
 		}
 	};
 	
+	@SuppressWarnings("serial")
 	private ArrayList<Item>items = new ArrayList<Item>() {
 		@Override
 		public String toString() {

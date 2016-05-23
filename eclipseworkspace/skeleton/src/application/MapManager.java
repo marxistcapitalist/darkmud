@@ -14,7 +14,6 @@ import application.model.interfaces.Keyable;
 import application.model.interfaces.Keyedable;
 import application.model.interfaces.Killable;
 import application.model.interfaces.Statusable;
-import application.model.rooms.Base;
 import application.model.rooms.Bedroom;
 import application.model.rooms.BreadcrumbA;
 import application.model.rooms.BreadcrumbB;
@@ -32,6 +31,7 @@ import application.model.rooms.ClearingE;
 import application.model.rooms.ClearingN;
 import application.model.rooms.ClearingW;
 import application.model.rooms.CrossRoads;
+import application.model.rooms.EndingRoom;
 import application.model.rooms.FlowerTrailA;
 import application.model.rooms.FlowerTrailB;
 import application.model.rooms.FlowerTrailC;
@@ -60,6 +60,7 @@ public class MapManager {
 	private static String room = "Clearing";
 	private static Health health = Health.HEALTHY;
 	
+	@SuppressWarnings("serial")
 	private static ArrayList<Item> inventory = new ArrayList<Item>() {
 		@Override
 		public String toString() {
@@ -134,6 +135,7 @@ public class MapManager {
 		rooms.put(GrandmaCabin.identifier, new GrandmaCabin(rooms));
 		rooms.put(WolfStomach.identifier, new WolfStomach(rooms));
 		rooms.put(Bedroom.identifier, new Bedroom(rooms));
+		rooms.put(EndingRoom.identifier, new EndingRoom(rooms));
 		
 		//Executes the initialize method in every mapped room
 		//Which must be done after the map itself is built

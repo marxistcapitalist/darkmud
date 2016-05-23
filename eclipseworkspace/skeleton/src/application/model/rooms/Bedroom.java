@@ -11,7 +11,7 @@ public class Bedroom extends Room {
 	public static String identifier = "Bedroom";
 
 	public Bedroom (HashMap<String, Room> rooms) { 
-		super(rooms, "You wake up suddenly, in your bed.\n\"Man, what a weird dream...\" you think, as you look around your room.\nHowever, you look on your sidetable, and see the mysterious book...\nThe book is open with all the treasures inside...\n------------------------\nTHANKS for PLAYING! Inspect the book to go to the ending room.", "You see your bedroom, where you just came from");
+		super(rooms, "You wake up suddenly, in your bed.\n\"Man, what a weird dream...\" you think, as you look around your room.\nHowever, you look on your sidetable, and see the mysterious book...\nThe book is open, with all the treasures still inside...\n------------------------\nTHANKS for PLAYING! Inspect the book to go to the ending room.", "You see your bedroom, where you just came from");
 		super.id = identifier;
 	}
 	

@@ -1,0 +1,367 @@
+package application;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map.Entry;
+
+import application.model.Item;
+import application.model.Room;
+import application.model.interfaces.Consumable;
+import application.model.interfaces.Containerable;
+import application.model.interfaces.Inventoryable;
+import application.model.interfaces.Keyable;
+import application.model.interfaces.Keyedable;
+import application.model.interfaces.Killable;
+import application.model.interfaces.Statusable;
+import application.model.rooms.Base;
+import application.model.rooms.Bedroom;
+import application.model.rooms.BreadcrumbA;
+import application.model.rooms.BreadcrumbB;
+import application.model.rooms.BreadcrumbC;
+import application.model.rooms.BreadcrumbD;
+import application.model.rooms.BriarPatch;
+import application.model.rooms.BrushTower;
+import application.model.rooms.CandyHouse;
+import application.model.rooms.CandyKitchen;
+import application.model.rooms.CandyOven;
+import application.model.rooms.CandyStorage;
+import application.model.rooms.CandyYard;
+import application.model.rooms.Clearing;
+import application.model.rooms.ClearingE;
+import application.model.rooms.ClearingN;
+import application.model.rooms.ClearingW;
+import application.model.rooms.CrossRoads;
+import application.model.rooms.FlowerTrailA;
+import application.model.rooms.FlowerTrailB;
+import application.model.rooms.FlowerTrailC;
+import application.model.rooms.FlowerTrailD;
+import application.model.rooms.FlowerTrailE;
+import application.model.rooms.FloweryField;
+import application.model.rooms.ForestA;
+import application.model.rooms.ForestPath;
+import application.model.rooms.FrontYard;
+import application.model.rooms.GrandmaCabin;
+import application.model.rooms.Grassland;
+import application.model.rooms.GrueStorage;
+import application.model.rooms.House;
+import application.model.rooms.HouseKitchen;
+import application.model.rooms.Library;
+import application.model.rooms.OldStaircase;
+import application.model.rooms.ToadstoolRing;
+import application.model.rooms.WolfStomach;
+import application.model.rooms.WornRoadA;
+import application.model.rooms.WornRoadB;
+import application.view.LogEntry.LogType;
+import application.view.Logger;
+
+public class MapManager {
+	
+	private static String room = "Clearing";
+	private static Health health = Health.HEALTHY;
+	
+	private static ArrayList<Item> inventory = new ArrayList<Item>() {
+		@Override
+		public String toString() {
+			String temp = "\n";
+			for (Item item : inventory) {
+				temp += "\t" + item.description + " " + item.identifier + "\n";
+			}
+			return temp;
+		}
+	};
+	
+	
+	private static HashMap<String, Room> rooms = new HashMap<String, Room>();
+	
+	public enum Health {
+		HEALTHY ("Healthy"), SCATHED ("Scathed"), HURT ("Hurt"), INJURED ("Injured"), 
+		SEVEREINJURED ("Severely Injured"), WOUNDED ("Wounded"), NEARDEAD ("Nearly Dead"), DEAD ("Dead");
+		
+		private String status;
+		
+		Health(String status) {
+			this.status = status;
+		}
+		
+		@Override
+		public String toString() {
+			return this.status;
+		}
+	}
+	
+	//Defines the map itself and adds rooms to a HashMap for reference
+	public MapManager () throws InterruptedException {
+		room = "Clearing";
+		health = Health.HEALTHY;
+		inventory.clear();
+		rooms.clear();
+		
+		rooms.put(Clearing.identifier, new Clearing(rooms));
+		rooms.put(FrontYard.identifier, new FrontYard(rooms));
+		rooms.put(House.identifier, new House(rooms));
+		rooms.put(Library.identifier, new Library(rooms));
+		rooms.put(HouseKitchen.identifier, new HouseKitchen(rooms));
+		rooms.put(OldStaircase.identifier, new OldStaircase(rooms));
+		rooms.put(GrueStorage.identifier, new GrueStorage(rooms));
+		rooms.put(WornRoadA.identifier, new WornRoadA(rooms));
+		rooms.put(WornRoadB.identifier, new WornRoadB(rooms));
+		rooms.put(Grassland.identifier, new Grassland(rooms));
+		rooms.put(ClearingW.identifier, new ClearingW(rooms));
+		rooms.put(BrushTower.identifier, new BrushTower(rooms));
+		rooms.put(ClearingN.identifier, new ClearingN(rooms));
+		rooms.put(ClearingE.identifier, new ClearingE(rooms));
+		rooms.put(ToadstoolRing.identifier, new ToadstoolRing(rooms));
+		rooms.put(ForestA.identifier, new ForestA(rooms));
+		rooms.put(BriarPatch.identifier, new BriarPatch(rooms));
+		rooms.put(ForestPath.identifier, new ForestPath(rooms));
+		rooms.put(CrossRoads.identifier, new CrossRoads(rooms));
+		rooms.put(BreadcrumbA.identifier, new BreadcrumbA(rooms));
+		rooms.put(BreadcrumbB.identifier, new BreadcrumbB(rooms));
+		rooms.put(BreadcrumbC.identifier, new BreadcrumbC(rooms));
+		rooms.put(BreadcrumbD.identifier, new BreadcrumbD(rooms));
+		rooms.put(CandyYard.identifier, new CandyYard(rooms));
+		rooms.put(CandyHouse.identifier, new CandyHouse(rooms));
+		rooms.put(CandyStorage.identifier, new CandyStorage(rooms));
+		rooms.put(CandyKitchen.identifier, new CandyKitchen(rooms));
+		rooms.put(CandyOven.identifier, new CandyOven(rooms));
+		rooms.put(FlowerTrailA.identifier, new FlowerTrailA(rooms));
+		rooms.put(FlowerTrailB.identifier, new FlowerTrailB(rooms));
+		rooms.put(FloweryField.identifier, new FloweryField(rooms));
+		rooms.put(FlowerTrailC.identifier, new FlowerTrailC(rooms));
+		rooms.put(FlowerTrailD.identifier, new FlowerTrailD(rooms));
+		rooms.put(FlowerTrailE.identifier, new FlowerTrailE(rooms));
+		rooms.put(GrandmaCabin.identifier, new GrandmaCabin(rooms));
+		rooms.put(WolfStomach.identifier, new WolfStomach(rooms));
+		rooms.put(Bedroom.identifier, new Bedroom(rooms));
+		
+		//Executes the initialize method in every mapped room
+		//Which must be done after the map itself is built
+		for (Entry<String, Room> room : rooms.entrySet()) {
+			room.getValue().initialize();
+		}
+		
+		Logger.log(LogType.ROOM, "You awake in the world, standing atop a grassy hill.\nYou see a large country house to the south, and a leaflet on the ground.");
+		Logger.log(LogType.RESPONSE, "You can go: " + getCurrentRoom().getDoorwayDirections());
+
+	}
+
+	public static Room getCurrentRoom () {
+		return rooms.get(room);
+	}
+	
+	public static ArrayList<Item> getInventoryItems() {
+		return inventory;
+	}
+	
+	public static String getCurrentRoomName() {
+		return room;
+	}
+	
+	public static String getHealth() {
+		return health.toString();
+	}
+	
+	public static Health getHealthRaw() {
+		return health;
+	}
+	
+	public static void setHealth(Health h) {
+		switch(h) {
+		case HEALTHY:
+			Logger.log(LogType.RESPONSE, "Your status was changed to HEALTHY");
+			health = Health.HEALTHY;
+			break;
+		case SCATHED:
+			Logger.log(LogType.RESPONSE, "Your status was changed to SCATHED");
+			health = Health.SCATHED;
+			break;
+		case HURT:
+			Logger.log(LogType.RESPONSE, "Your status was changed to HURT");
+			health = Health.HURT;
+			break;
+		case INJURED:
+			Logger.log(LogType.RESPONSE, "Your status was changed to INJURED");
+			health = Health.INJURED;
+			break;
+		case SEVEREINJURED:
+			Logger.log(LogType.RESPONSE, "Your status was to SEVERELY INJURED");
+			health = Health.SEVEREINJURED;
+			break;
+		case WOUNDED:
+			Logger.log(LogType.RESPONSE, "Your status was changed to WOUNDED");
+			health = Health.WOUNDED;
+			break;
+		case NEARDEAD:
+			Logger.log(LogType.RESPONSE, "Your status was changed to NEARLY DEAD");
+			health = Health.NEARDEAD;
+			break;
+		case DEAD:
+			Logger.log(LogType.RESPONSE, "Your status was changed to DEAD\nYou died!");
+			health = Health.DEAD;
+			break;
+		}
+	}
+	
+	public static void incrementHealth() {
+		incrementHealth(true);
+	}
+
+	public static void incrementHealth(boolean showMessage) {
+		switch (health) {
+		case HEALTHY:
+			if(showMessage) Logger.log(LogType.RESPONSE, "You were already at full health");
+			break;
+		case SCATHED:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was increased to HEALTHY");
+			health = Health.HEALTHY;
+			break; 
+		case HURT:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was increased to SCATHED");
+			health = Health.SCATHED;
+			break;
+		case INJURED:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was increased to HURT");
+			health = Health.HURT;
+			break;
+		case SEVEREINJURED:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was increased to INJURED");
+			health = Health.INJURED;
+			break;
+		case WOUNDED:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was increased to SEVERELY INJURED");
+			health = Health.SEVEREINJURED;
+			break;
+		case NEARDEAD:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was increased to WOUNDED");
+			health = Health.WOUNDED;
+			break;
+		case DEAD:
+			if(showMessage) Logger.log(LogType.RESPONSE, "You are already dead... you lost.");
+			break;
+		}
+	}
+	
+	public static void decrementHealth() {
+		decrementHealth(true);
+	}
+
+	public static void decrementHealth(boolean showMessage) {
+		switch (health) {
+		case DEAD: 
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your dead body loses even more life... somehow.");
+			break;
+		case NEARDEAD:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was reduced to DEAD.\nYou died!");
+			health = Health.DEAD;
+			break;
+		case WOUNDED:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was reduced to NEARLY DEAD.");
+			health = Health.NEARDEAD;
+			break;
+		case SEVEREINJURED:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was reduced to WOUNDED.");
+			health = Health.WOUNDED;
+			break;
+		case INJURED:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was reduced to SEVERELY INJURED.");
+			health = Health.SEVEREINJURED;
+			break;
+		case HURT:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was reduced to INJURED.");
+			health = Health.INJURED;
+			break;
+		case SCATHED:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was reduced to HURT.");
+			health = Health.HURT;
+			break;
+		case HEALTHY:
+			if(showMessage) Logger.log(LogType.RESPONSE, "Your status was reduced to SCATHED.");
+			health = Health.SCATHED;
+			break;
+		}
+	}
+	
+	public static void changeHealth(int change) {
+		if(change < 0) {
+			change = Math.abs(change);
+			while (change > 0) {
+				decrementHealth(false);
+				change--;
+			}
+		} else if(change > 0) {
+			while (change > 0) {
+				incrementHealth(false);
+				change--;
+			}
+		}
+	}
+
+
+	public static ArrayList<Item> getTypedInventoryItems(String classtype) {
+		ArrayList<Item> temp = new ArrayList<>();
+		if (inventory != null) {
+			if (classtype.equalsIgnoreCase("consumable")) {
+				for (Item item : inventory) {
+					if (item instanceof Consumable)
+						temp.add(item);
+				}
+			}
+			if (classtype.equalsIgnoreCase("containerable")) {
+				for (Item item : inventory) {
+					if (item instanceof Containerable)
+						temp.add(item);
+				}
+			}
+			if (classtype.equalsIgnoreCase("inventoryable")) {
+				for (Item item : inventory) {
+					if (item instanceof Inventoryable)
+						temp.add(item);
+				}
+			}
+			if (classtype.equalsIgnoreCase("keyable")) {
+				for (Item item : inventory) {
+					if (item instanceof Keyable)
+						temp.add(item);
+				}
+			}
+			if (classtype.equalsIgnoreCase("keyedable")) {
+				for (Item item : inventory) {
+					if (item instanceof Keyedable)
+						temp.add(item);
+				}
+			}
+			if (classtype.equalsIgnoreCase("killable")) {
+				for (Item item : inventory) {
+					if (item instanceof Killable)
+						temp.add(item);
+				}
+			}
+			if (classtype.equalsIgnoreCase("statusable")) {
+				for (Item item : inventory) {
+					if (item instanceof Statusable)
+						temp.add(item);
+				}
+			}		
+		}
+		return temp;
+	}
+	
+	public static void movePlayer(Room leadsTo) {
+		room = leadsTo.id;
+		Logger.log(LogType.ROOM, leadsTo.getDescription());
+		if(leadsTo.getDoorways().size() > 0)
+			Logger.log(LogType.RESPONSE, "You can go: " + rooms.get(room).getDoorwayInformation());
+		leadsTo.enter();
+	}
+	
+	public static void moveOnWin() {
+		room = "EndingRoom";
+		Logger.log(LogType.ROOM, rooms.get(room).getDescription());
+		Logger.log(LogType.END, "You have won the game!");
+	}
+	
+	public static Collection<Room> getAllRoomsUnnamed() {
+		return rooms.values();
+	}
+}

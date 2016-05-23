@@ -22,6 +22,7 @@ public class Item {
 	public boolean locked;
 	
 	
+	@SuppressWarnings("serial")
 	public Item () {
 		this.children = new ArrayList<Item>() {
 			@Override

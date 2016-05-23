@@ -13,9 +13,10 @@ import javafx.scene.layout.BorderPane;
 public class Main extends Application {
 	
 	private static Stage primaryStage;
-	//public static String prepend = "view/"; // For IN-ECLIPSE runs
-	public static String prepend = "/src/application/view/"; // For JAR EXPORTS
+	public static String prepend = "view/"; // For IN-ECLIPSE runs
+	//public static String prepend = "/src/application/view/"; // For JAR EXPORTS
 		
+	@SuppressWarnings("static-access")
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;

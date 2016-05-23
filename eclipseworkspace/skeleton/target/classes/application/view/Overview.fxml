@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane onMouseDragged="#handleMouseDrag" onMousePressed="#handleMousePress" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: rgba(255,255,255,0.4);" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.view.OverviewController">
+<BorderPane onMouseDragged="#handleMouseDrag" onMousePressed="#handleMousePress" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: rgba(255,255,255,0.4);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.OverviewController">
   <center>
     <TabPane fx:id="tabbedPane" onMouseDragged="#handleMouseDrag" onMousePressed="#handleMousePress" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(255,255,255,0.4);" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
       <tabs>
@@ -24,7 +24,7 @@
           <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" onMouseDragged="#handleMouseDrag" onMousePressed="#handleMousePress" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: TRANSPARENT;">
               <children>
-                <TextArea fx:id="menuArea" editable="false" focusTraversable="false" layoutX="14.0" layoutY="14.0" prefHeight="543.0" prefWidth="771.0" style="-fx-background-color: TRANSPARENT;" text="&quot;The Maze&quot; is a simple text based Java application which provides a large map to explore, items to obtain and monsters to defeat. Throughout your quest you will run into many challenges: locked doors, violent enemeies, and more!&#10;&#10;GAME'S VOCABULARY&#10;------------------------------------------------------------------------------&#10;ALL&#10;AT&#10;DOWN&#10;DROP&#10;EVERYTHING&#10;FROM&#10;GO&#10;HELP&#10;IN&#10;INSPECT&#10;INVENTORY&#10;ON&#10;OUT&#10;PICK&#10;PUT&#10;QUIT&#10;REST&#10;RESTART&#10;ROOM&#10;TAKE&#10;THROW&#10;UP&#10;USE&#10;------------------------------------------------------------------------------&#10;Thank you for playing the great above ground adventure!&#10;&#10;" wrapText="true" />
+                <TextArea fx:id="menuArea" editable="false" focusTraversable="false" layoutX="14.0" layoutY="14.0" prefHeight="543.0" prefWidth="771.0" style="-fx-background-color: TRANSPARENT;" text="&quot;Fables&quot; is a text based Java application which provides a large map to explore, items to obtain and monsters to defeat. Throughout your quest you will run into many challenges: deadly traps, violent enemeies, and more!&#10;&#10;GAME'S VOCABULARY&#10;------------------------------------------------------------------------------&#10;ALL&#10;AT&#10;DOWN&#10;DROP&#10;EVERYTHING&#10;FROM&#10;GO&#10;HELP&#10;IN&#10;INSPECT&#10;INVENTORY&#10;LOOK&#10;ON&#10;OUT&#10;PICK&#10;PUT&#10;QUIT&#10;REST&#10;RESTART&#10;ROOM&#10;TAKE&#10;THROW&#10;UP&#10;USE&#10;------------------------------------------------------------------------------&#10;Thank you for playing our dark fairytale-themed adventure!&#10;&#10;" wrapText="true" />
               </children>
             </AnchorPane>
           </content>
