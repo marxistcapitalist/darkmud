@@ -37,7 +37,7 @@ public class Library extends Room {
 						i++;
 				}
 				if(i == 3)
-					MapManager.movePlayer(rooms.get(Bedroom.identifier));
+					MapManager.movePlayer(rooms.get(Bedroom.identifier));;
 			}
 			
 			@Override

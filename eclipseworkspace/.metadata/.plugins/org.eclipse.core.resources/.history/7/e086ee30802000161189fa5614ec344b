@@ -15,7 +15,6 @@ import application.model.interfaces.Keyedable;
 import application.model.interfaces.Killable;
 import application.model.interfaces.Statusable;
 import application.model.rooms.Base;
-import application.model.rooms.Bedroom;
 import application.model.rooms.BreadcrumbA;
 import application.model.rooms.BreadcrumbB;
 import application.model.rooms.BreadcrumbC;
@@ -34,14 +33,10 @@ import application.model.rooms.ClearingW;
 import application.model.rooms.CrossRoads;
 import application.model.rooms.FlowerTrailA;
 import application.model.rooms.FlowerTrailB;
-import application.model.rooms.FlowerTrailC;
-import application.model.rooms.FlowerTrailD;
-import application.model.rooms.FlowerTrailE;
 import application.model.rooms.FloweryField;
 import application.model.rooms.ForestA;
 import application.model.rooms.ForestPath;
 import application.model.rooms.FrontYard;
-import application.model.rooms.GrandmaCabin;
 import application.model.rooms.Grassland;
 import application.model.rooms.GrueStorage;
 import application.model.rooms.House;
@@ -49,7 +44,6 @@ import application.model.rooms.HouseKitchen;
 import application.model.rooms.Library;
 import application.model.rooms.OldStaircase;
 import application.model.rooms.ToadstoolRing;
-import application.model.rooms.WolfStomach;
 import application.model.rooms.WornRoadA;
 import application.model.rooms.WornRoadB;
 import application.view.LogEntry.LogType;
@@ -128,12 +122,6 @@ public class MapManager {
 		rooms.put(FlowerTrailA.identifier, new FlowerTrailA(rooms));
 		rooms.put(FlowerTrailB.identifier, new FlowerTrailB(rooms));
 		rooms.put(FloweryField.identifier, new FloweryField(rooms));
-		rooms.put(FlowerTrailC.identifier, new FlowerTrailC(rooms));
-		rooms.put(FlowerTrailD.identifier, new FlowerTrailD(rooms));
-		rooms.put(FlowerTrailE.identifier, new FlowerTrailE(rooms));
-		rooms.put(GrandmaCabin.identifier, new GrandmaCabin(rooms));
-		rooms.put(WolfStomach.identifier, new WolfStomach(rooms));
-		rooms.put(Bedroom.identifier, new Bedroom(rooms));
 		
 		//Executes the initialize method in every mapped room
 		//Which must be done after the map itself is built

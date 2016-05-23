@@ -15,7 +15,6 @@ import application.model.interfaces.Keyedable;
 import application.model.interfaces.Killable;
 import application.model.interfaces.Statusable;
 import application.model.rooms.Base;
-import application.model.rooms.Bedroom;
 import application.model.rooms.BreadcrumbA;
 import application.model.rooms.BreadcrumbB;
 import application.model.rooms.BreadcrumbC;
